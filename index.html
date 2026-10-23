@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>for keken ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,6 @@
   --pink-dark: #d9aebd;
   --grey: #77747b;
   --dark: #45414a;
-  --white: #ffffff;
 }
 
 * {
@@ -60,11 +60,17 @@ button {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-h1, h2, h3 {
+h1, h2 {
   font-family: 'Fredoka', sans-serif;
   font-weight: 500;
 }
@@ -94,10 +100,6 @@ button:focus-visible {
   font-size: 12px;
 }
 
-.music-control:active {
-  transform: scale(.96);
-}
-
 /* PASSWORD PAGE */
 
 #gate {
@@ -124,7 +126,9 @@ button:focus-visible {
 }
 
 @keyframes cakeFloat {
-  50% { transform: translateY(-8px) rotate(3deg); }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
 }
 
 .eyebrow {
@@ -212,7 +216,9 @@ button:focus-visible {
 }
 
 @keyframes pulse {
-  to { transform: scale(1.3); }
+  to {
+    transform: scale(1.3);
+  }
 }
 
 .heart-particle {
@@ -226,10 +232,12 @@ button:focus-visible {
 
 @keyframes heartFly {
   0% {
-    transform: translate(-50%, -50%) scale(.3) rotate(0);
+    transform: translate(-50%, -50%) scale(.3);
     opacity: 0;
   }
-  15% { opacity: 1; }
+  15% {
+    opacity: 1;
+  }
   100% {
     transform: translate(
       calc(-50% + var(--x)),
@@ -280,7 +288,9 @@ button:focus-visible {
 }
 
 @keyframes float {
-  50% { transform: translateY(-12px) rotate(8deg); }
+  50% {
+    transform: translateY(-12px) rotate(8deg);
+  }
 }
 
 .next-button {
@@ -317,7 +327,7 @@ button:focus-visible {
 .section-heading .tiny {
   color: #a27f8b;
   font-size: 11px;
-  letter-spacing: 3px;
+  letterter-spacing: 3px;
   text-transform: uppercase;
 }
 
@@ -334,9 +344,9 @@ button:focus-visible {
 }
 
 .photo-grid {
-  width: min(100%, 980px);
+  width: min(100%, 760px);
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px 18px;
   margin: 0 auto;
 }
@@ -367,7 +377,7 @@ button:focus-visible {
 
 .polaroid figcaption {
   font-family: 'Caveat', cursive;
-  font-size: clamp(13px, 1.7vw, 19px);
+  font-size: clamp(15px, 2vw, 20px);
   text-align: center;
   padding-top: 9px;
   color: #68606a;
@@ -390,7 +400,7 @@ button:focus-visible {
   margin-top: 22px;
 }
 
-/* LETTER INVITATION */
+/* LETTER PAGE */
 
 #letterPage {
   background:
@@ -530,8 +540,14 @@ button:focus-visible {
 }
 
 @keyframes letterAppear {
-  from { opacity: 0; transform: translateY(35px) scale(.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .paper {
@@ -597,10 +613,12 @@ button:focus-visible {
   margin: 24px 0 0;
 }
 
-@media (max-width: 700px) {
+/* PHONE LAYOUT */
+
+@media (max-width: 500px) {
   .photo-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 15px;
   }
 
   .polaroid {
@@ -610,16 +628,11 @@ button:focus-visible {
   .polaroid figcaption {
     font-size: 15px;
   }
-}
 
-@media (max-width: 390px) {
-  .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 15px;
-  }
-
-  .section-heading h2 {
-    font-size: 31px;
+  .polaroid:last-child {
+    grid-column: 1 / -1;
+    width: 65%;
+    justify-self: center;
   }
 
   .paper {
@@ -632,14 +645,6 @@ button:focus-visible {
 
   .runaway-zone {
     min-height: 175px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
   }
 }
 </style>
@@ -675,9 +680,11 @@ button:focus-visible {
         aria-label="Birthday password"
         required
       >
+
       <button class="main-button" type="submit">
         unlock your surprise ♡
       </button>
+
       <p id="passwordError" class="error" aria-live="polite"></p>
     </form>
 
@@ -703,7 +710,11 @@ button:focus-visible {
 
   <div class="intro-sparkle">✧･ﾟ: *✧･ﾟ:* ♡ *:･ﾟ✧*:･ﾟ✧</div>
   <p class="script" style="font-size:28px;margin:8px 0">made with love,</p>
-  <h1 class="intro-title">for you,<br><span class="script">keken ♡</span></h1>
+
+  <h1 class="intro-title">
+    for you,<br>
+    <span class="script">keken ♡</span>
+  </h1>
 
   <p class="intro-copy">
     a little corner of our story. aku bikin sesuatu kecil buat kamu,
@@ -750,31 +761,6 @@ button:focus-visible {
 
     <figure class="polaroid" style="--tilt:-1deg">
       <img src="foto5.jpg" alt="Memory 5" loading="lazy">
-      <figcaption>little happiness</figcaption>
-    </figure>
-
-    <figure class="polaroid" style="--tilt:2deg">
-      <img src="foto6.jpg" alt="Memory 6" loading="lazy">
-      <figcaption>glad it was you</figcaption>
-    </figure>
-
-    <figure class="polaroid" style="--tilt:-3deg">
-      <img src="foto7.jpg" alt="Memory 7" loading="lazy">
-      <figcaption>one for the memories</figcaption>
-    </figure>
-
-    <figure class="polaroid" style="--tilt:2deg">
-      <img src="foto8.jpg" alt="Memory 8" loading="lazy">
-      <figcaption>my kind of favorite</figcaption>
-    </figure>
-
-    <figure class="polaroid" style="--tilt:-2deg">
-      <img src="foto9.jpg" alt="Memory 9" loading="lazy">
-      <figcaption>just us, being us</figcaption>
-    </figure>
-
-    <figure class="polaroid" style="--tilt:3deg">
-      <img src="foto10.jpg" alt="Memory 10" loading="lazy">
       <figcaption>and many more ♡</figcaption>
     </figure>
   </div>
@@ -785,6 +771,7 @@ button:focus-visible {
     <button class="next-button" type="button" onclick="showPage('intro')">
       ← go back
     </button>
+
     <button class="main-button" type="button" onclick="openLetterPage()">
       there's one more thing 💌
     </button>
@@ -807,11 +794,7 @@ button:focus-visible {
     </p>
 
     <div class="runaway-zone" id="runawayZone">
-      <button
-        class="runaway-button"
-        id="runawayButton"
-        type="button"
-      >
+      <button class="runaway-button" id="runawayButton" type="button">
         read my message 💌
       </button>
     </div>
@@ -821,7 +804,7 @@ button:focus-visible {
     </p>
   </div>
 
-  <!-- The full letter appears after 3 button escapes -->
+  <!-- LETTER CONTENT -->
   <article id="letterContent">
     <div class="paper">
       <p class="letter-title">
@@ -914,10 +897,11 @@ function showPage(pageId) {
     page.classList.remove('active');
   });
 
-  const nextPage = document.getElementById(pageId);
-  nextPage.classList.add('active');
+  document.getElementById(pageId).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+/* MUSIC */
 
 function startMusic() {
   music.volume = 0.45;
@@ -949,6 +933,8 @@ musicButton.addEventListener('click', async () => {
   }
 });
 
+/* HEART EXPLOSION */
+
 function makeExplosion() {
   const hearts = ['♡', '♥', '🤍', '💗', '✧', '💕', '୨୧'];
 
@@ -958,7 +944,8 @@ function makeExplosion() {
     particle.textContent = hearts[Math.floor(Math.random() * hearts.length)];
 
     const angle = Math.random() * Math.PI * 2;
-    const distance = 100 + Math.random() * Math.max(window.innerWidth, window.innerHeight) * 0.65;
+    const distance = 100 + Math.random() *
+      Math.max(window.innerWidth, window.innerHeight) * 0.65;
 
     particle.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
     particle.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
@@ -969,6 +956,8 @@ function makeExplosion() {
     burst.appendChild(particle);
   }
 }
+
+/* PASSWORD */
 
 passwordForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -996,13 +985,14 @@ passwordForm.addEventListener('submit', event => {
       burst.classList.add('hidden');
       burst.style.opacity = '1';
       burst.style.transition = '';
+
       burst.querySelectorAll('.heart-particle').forEach(el => el.remove());
       showPage('intro');
     }, 700);
   }, 1700);
 });
 
-/* LETTER ENVELOPE + RUNAWAY BUTTON */
+/* LETTER + RUNAWAY BUTTON */
 
 const envelope = document.getElementById('envelope');
 const runawayZone = document.getElementById('runawayZone');
@@ -1011,7 +1001,6 @@ const runawayMessage = document.getElementById('runawayMessage');
 const letterHint = document.getElementById('letterHint');
 const letterContent = document.getElementById('letterContent');
 const letterIntro = document.getElementById('letterIntro');
-const letterBackActions = document.getElementById('letterBackActions');
 
 let envelopeOpened = false;
 let escapeCount = 0;
@@ -1034,6 +1023,7 @@ function moveRunawayButton() {
 
   if (!envelopeOpened) {
     letterHint.textContent = 'amplopnya dibuka dulu dongg 🤭';
+
     envelope.animate(
       [
         { transform: 'translateX(0)' },
@@ -1043,6 +1033,7 @@ function moveRunawayButton() {
       ],
       { duration: 300 }
     );
+
     return;
   }
 
@@ -1054,13 +1045,21 @@ function moveRunawayButton() {
     runawayButton.style.left = '50%';
     runawayButton.style.top = '50%';
     runawayButton.style.transform = 'translate(-50%, -50%)';
+
     runawayMessage.textContent = teaseMessages[2];
     letterHint.textContent = 'you finally caught it! 🥹';
     return;
   }
 
-  const maxX = Math.max(0, runawayZone.clientWidth - runawayButton.offsetWidth - 16);
-  const maxY = Math.max(0, runawayZone.clientHeight - runawayButton.offsetHeight - 16);
+  const maxX = Math.max(
+    0,
+    runawayZone.clientWidth - runawayButton.offsetWidth - 16
+  );
+
+  const maxY = Math.max(
+    0,
+    runawayZone.clientHeight - runawayButton.offsetHeight - 16
+  );
 
   const x = 8 + Math.random() * maxX;
   const y = 8 + Math.random() * maxY;
@@ -1068,16 +1067,18 @@ function moveRunawayButton() {
   runawayButton.style.left = `${x}px`;
   runawayButton.style.top = `${y}px`;
   runawayButton.style.transform = 'none';
+
   runawayMessage.textContent = teaseMessages[escapeCount - 1];
 }
 
-/* The button escapes when approached, but remains usable on touch screens. */
+/* Mouse hover makes the button run away */
 runawayButton.addEventListener('pointerenter', event => {
   if (event.pointerType === 'mouse' && !letterUnlocked) {
     moveRunawayButton();
   }
 });
 
+/* On touch screens, tap the button to make it move */
 runawayButton.addEventListener('click', () => {
   if (!envelopeOpened) {
     letterHint.textContent = 'buka amplopnya dulu, sayangg 🤍';
@@ -1099,7 +1100,6 @@ function openLetterPage() {
 function openLetter() {
   letterIntro.style.display = 'none';
   letterContent.classList.add('show');
-  letterBackActions.style.display = 'flex';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
