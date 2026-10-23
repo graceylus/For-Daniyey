@@ -1,276 +1,356 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Daniel ♡</title>
+<title>Happy Birthday Keken 🤍</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap');
-
 :root {
-  --bg: #100e16;
-  --card: #1b1723;
-  --pink: #f1a6c8;
-  --purple: #c6a8ff;
-  --white: #f8eff7;
-  --muted: #aaa0b4;
+  --pink: #f0d5df;
+  --pink-dark: #d9aebf;
+  --grey: #8f8994;
+  --cream: #faf6f5;
+  --white: #fffdfd;
+  --ink: #625b66;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background:
-    radial-gradient(ellipse at 15% 5%, #39203d 0, transparent 35%),
-    radial-gradient(ellipse at 90% 40%, #211d3b 0, transparent 35%),
-    var(--bg);
-  color: var(--white);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  overflow-x: hidden;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .12;
-  background-image: radial-gradient(#fff 1px, transparent 1px);
-  background-size: 32px 32px;
+button, input { font: inherit; }
+
+button { cursor: pointer; }
+
+h1, h2, h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
 }
 
-nav {
-  padding: 22px 7%;
+p { line-height: 1.9; }
+
+.hidden { display: none !important; }
+
+/* PASSWORD PAGE */
+#gate {
+  min-height: 100svh;
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: var(--muted);
-  border-bottom: 1px solid #ffffff12;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 15% 15%, #fff 0 3%, transparent 4%),
+    radial-gradient(circle at 85% 80%, #eadfe8 0 5%, transparent 6%),
+    linear-gradient(145deg, #faf6f5, #f0d5df);
 }
 
-nav span:last-child {
-  color: var(--pink);
+.gate-card {
+  width: 100%;
+  max-width: 410px;
+  padding: 36px 24px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid white;
+  border-radius: 30px;
+  box-shadow: 0 18px 50px #b7a6b31c;
 }
 
-main {
-  width: min(850px, 90%);
-  margin: auto;
+.cake { font-size: 48px; }
+
+.gate-card h1 {
+  font-size: clamp(30px, 8vw, 42px);
+  line-height: 1.2;
+  margin: 14px 0;
+  color: #827783;
 }
+
+.gate-card p { font-size: 14px; }
+
+.password {
+  display: block;
+  width: 100%;
+  max-width: 255px;
+  margin: 22px auto 14px;
+  padding: 14px 10px;
+  text-align: center;
+  letter-spacing: 12px;
+  text-indent: 12px;
+  font-size: 22px;
+  border: 1.5px solid #e2c6d2;
+  border-radius: 16px;
+  background: #fffdfd;
+  color: var(--ink);
+  outline: none;
+}
+
+.password:focus { border-color: var(--grey); }
+
+.pill {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 24px;
+  background: #b8b3ba;
+  color: white;
+  font-weight: 700;
+  transition: transform .2s, background .2s;
+}
+
+.pill:hover {
+  transform: translateY(-2px);
+  background: #96909b;
+}
+
+#error {
+  color: #b36c83;
+  font-size: 13px;
+  min-height: 20px;
+}
+
+/* MAIN WEBSITE */
+#surprise { display: none; }
 
 .hero {
-  min-height: 82vh;
+  min-height: 72svh;
+  padding: 80px 22px 65px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 60px 0;
+  justify-content: center;
+  background: linear-gradient(155deg, #f4dfe6, #faf6f5 72%);
+  position: relative;
+  overflow: hidden;
 }
 
-.tag {
-  font-family: 'DM Mono', monospace;
-  color: var(--pink);
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
   font-size: 11px;
-  letter-spacing: 2px;
+  font-weight: 700;
+  color: #9b8e9c;
 }
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(45px, 12vw, 85px);
-  font-weight: 500;
-  line-height: 1.1;
-  margin: 24px 0 15px;
-}
-
-h1 em {
-  color: var(--pink);
-  font-weight: 500;
+.hero h1 {
+  font-size: clamp(40px, 10vw, 68px);
+  line-height: 1.05;
+  margin: 16px 0;
+  color: #847987;
 }
 
 .hero p {
-  max-width: 420px;
-  color: var(--muted);
-  line-height: 1.9;
-  font-size: 13px;
+  max-width: 310px;
+  font-size: 14px;
 }
 
-.heart {
-  font-size: 24px;
-  color: var(--pink);
-  margin: 20px;
-  animation: heartbeat 1.6s infinite;
+.scroll-note {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #a399a5;
+  animation: bob 1.8s infinite;
 }
 
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.18); }
+@keyframes bob {
+  50% { transform: translateY(6px); }
 }
 
-button {
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  border: 1px solid var(--pink);
-  color: var(--white);
-  background: #f1a6c814;
-  padding: 13px 23px;
-  border-radius: 5px;
-  margin-top: 16px;
-  transition: .3s;
-}
-
-button:hover {
-  background: var(--pink);
-  color: var(--bg);
-}
-
-.section {
-  padding: 55px 0;
+section.content {
+  max-width: 850px;
+  margin: auto;
+  padding: 75px 20px;
 }
 
 .section-label {
-  color: var(--pink);
-  font: 11px 'DM Mono', monospace;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #a495a3;
 }
 
-h2 {
-  font: 500 clamp(29px, 7vw, 42px) 'Playfair Display', serif;
-  margin: 0 0 25px;
+section.content h2 {
+  font-size: clamp(28px, 7vw, 40px);
+  margin: 10px 0;
+  color: #817584;
 }
 
-.card {
-  background: #1b1723dd;
-  border: 1px solid #ffffff12;
-  border-radius: 12px;
-  padding: 24px;
-  margin: 15px 0;
-  box-shadow: 0 15px 50px #00000012;
+.subtitle {
+  font-size: 13px;
+  color: #9b929d;
+  margin-bottom: 36px;
 }
 
-.code-top {
-  font: 11px 'DM Mono', monospace;
-  color: var(--muted);
-  border-bottom: 1px solid #ffffff12;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
+/* PHOTO GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 16px;
+  max-width: 620px;
+  margin: 35px auto 0;
 }
 
-.pink {
-  color: var(--pink);
+.polaroid {
+  background: white;
+  padding: 10px 10px 17px;
+  box-shadow: 0 9px 25px #8c77851a;
+  border-radius: 3px;
+  transform: rotate(-2deg);
 }
 
-.purple {
-  color: var(--purple);
+.polaroid:nth-child(2) { transform: rotate(2.5deg); }
+.polaroid:nth-child(3) {
+  grid-column: 1 / -1;
+  width: 72%;
+  justify-self: center;
+  transform: rotate(-1deg);
 }
 
 .photo-frame {
   width: 100%;
-  max-width: 380px;
-  margin: 0 auto 18px;
-  padding: 9px;
-  border: 1px solid #f1a6c855;
-  border-radius: 9px;
-  background: #ffffff05;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(145deg, #f5e5eb, #e6e2e8);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.polaroid:nth-child(3) .photo-frame {
+  aspect-ratio: 16 / 10;
+}
+
+.photo-placeholder {
+  padding: 12px;
+  font-size: 12px;
+  color: #8c7e8e;
 }
 
 .photo-frame img {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  min-height: 160px;
-  max-height: 460px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 5px;
 }
 
 .photo-caption {
-  text-align: center;
-  color: var(--muted);
-  font-size: 11px;
-  margin-top: 13px;
+  font-family: 'Caveat', cursive;
+  font-size: 21px;
+  margin-top: 12px;
+  color: #827783;
 }
 
-.memories {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+/* LETTER */
+.letter-area {
+  background: #f0e9ee;
+  padding: 72px 20px;
 }
 
-.memory {
-  background: var(--card);
-  border: 1px solid #ffffff12;
-  border-radius: 9px;
-  padding: 18px;
-}
-
-.memory .number {
-  font: 11px 'DM Mono', monospace;
-  color: var(--pink);
-}
-
-.memory h3 {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.memory p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.letter {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 1s ease, opacity .7s ease;
-}
-
-.letter.open {
-  max-height: 1800px;
-  opacity: 1;
-}
-
-.letter-content {
-  line-height: 2;
-  font-size: 13px;
-  color: #e4d8e7;
-  white-space: pre-line;
-}
-
-.letter-content .signature {
-  color: var(--pink);
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-style: italic;
-}
-
-.secret {
-  display: none;
-  text-align: center;
-  border: 1px dashed var(--purple);
-  color: var(--purple);
-  padding: 25px 15px;
-  border-radius: 8px;
-  margin-top: 20px;
-  line-height: 1.9;
-  font-size: 13px;
-}
-
-.secret.show {
+.envelope-button {
   display: block;
-  animation: appear .8s ease;
+  margin: 30px auto 10px;
+  width: min(100%, 300px);
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+}
+
+.envelope {
+  position: relative;
+  height: 170px;
+  background: #d8c9d5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 25px #84738420;
+  overflow: hidden;
+}
+
+.envelope:before,
+.envelope:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.envelope:before {
+  left: 0;
+  border-width: 0 0 115px 150px;
+  border-color: transparent transparent #e7dce5 transparent;
+}
+
+.envelope:after {
+  right: 0;
+  border-width: 0 150px 115px 0;
+  border-color: transparent transparent #e0d2df transparent;
+}
+
+.seal {
+  position: relative;
+  z-index: 1;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #f7e8ee;
+  font-size: 25px;
+  box-shadow: 0 3px 10px #8b74831b;
+}
+
+.envelope-label {
+  display: block;
+  margin-top: 17px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 17px;
+}
+
+.letter-paper {
+  display: none;
+  text-align: left;
+  max-width: 620px;
+  margin: 28px auto 0;
+  padding: clamp(22px, 6vw, 42px);
+  border-radius: 8px;
+  background: #fffdfb;
+  box-shadow: 0 12px 40px #85748716;
+  animation: appear .5s ease;
+}
+
+.letter-paper.open { display: block; }
+
+.letter-paper h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #9d7f91;
+  margin-top: 0;
+}
+
+.letter-paper p {
+  font-size: 14px;
+  white-space: normal;
+  margin: 0 0 20px;
+}
+
+.signature {
+  text-align: right;
+  font-family: 'Caveat', cursive;
+  font-size: 27px;
+  color: #a37f94;
 }
 
 @keyframes appear {
@@ -278,211 +358,308 @@ h2 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-footer {
-  text-align: center;
-  padding: 50px 0 35px;
-  font: 11px 'DM Mono', monospace;
-  color: var(--muted);
-  line-height: 2;
+/* SECRET */
+.secret-area { padding: 50px 20px 85px; }
+
+.secret-heart {
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  padding: 10px;
+  animation: heartbeat 1.5s infinite;
 }
 
-@media (max-width: 480px) {
-  .memories { grid-template-columns: 1fr; }
-  .card { padding: 18px; }
-  nav { font-size: 9px; }
+@keyframes heartbeat {
+  50% { transform: scale(1.15); }
+}
+
+.secret-message {
+  display: none;
+  max-width: 400px;
+  margin: 15px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 8px 25px #8c77851a;
+}
+
+footer {
+  padding: 25px;
+  font-size: 12px;
+  color: #a59aa5;
+}
+
+/* HEART EXPLOSION */
+#hearts {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.flying-heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 25px;
+  animation: burst 1.5s ease-out forwards;
+}
+
+@keyframes burst {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(.4);
+  }
+  to {
+    opacity: 0;
+    transform: translate(
+      calc(-50% + var(--x)),
+      calc(-50% + var(--y))
+    ) rotate(var(--r)) scale(1.6);
+  }
+}
+
+@media (max-width: 420px) {
+  .gallery { gap: 16px 12px; }
+  .polaroid { padding: 7px 7px 13px; }
+  .photo-caption { font-size: 18px; }
+  section.content { padding: 60px 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after {
+    animation-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 </style>
 </head>
 
 <body>
-<nav>
-  <span>grecia.exe</span>
-  <span>made with ♡ for daniel</span>
-</nav>
 
-<main>
+<!-- PASSWORD PAGE -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="cake">🎂</div>
+    <div class="eyebrow">a little surprise for you</div>
+    <h1>HAPPY BIRTHDAY<br>KEKEN SAYANGGG 🤍</h1>
+    <p>before you enter, there's one little question for you ♡</p>
+    <p><b>Enter your password:</b></p>
 
-<section class="hero">
-  <div class="tag">// a little something for you</div>
-  <h1>For you,<br><em>Daniel.</em></h1>
-  <p>
-    if i could turn all the things i feel into code,
-    maybe this little website would be the result.
-  </p>
-  <div class="heart">♡</div>
-  <p style="font-family:'DM Mono',monospace;font-size:11px;">
-    status: someone is very loved
-  </p>
-  <button onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">
-    enter our little world ↓
-  </button>
-</section>
-
-<section class="section">
-  <div class="section-label">01 / OUR LITTLE MEMORY</div>
-  <h2>A moment with you.</h2>
-
-  <div class="card">
-    <div class="code-top">
-      <span class="pink">●</span>
-      <span class="purple">●</span>
-      <span style="color:#a6d9b6;">●</span>
-      &nbsp; our-photo.jpg
-    </div>
-
-    <div class="photo-frame">
-      <!-- GANTI foto-kalian.jpg dengan nama file foto yang kamu upload -->
-      <img
-        src="foto-kalian.jpg"
-        alt="A little memory of us"
-        onerror="this.style.display='none';document.getElementById('photoPlaceholder').style.display='block';"
+    <form id="passwordForm">
+      <input
+        class="password"
+        id="password"
+        type="password"
+        inputmode="numeric"
+        maxlength="6"
+        placeholder="♡ ♡ ♡ ♡ ♡ ♡"
+        aria-label="Password"
+        autocomplete="off"
+        required
       >
-      <div id="photoPlaceholder" style="display:none;text-align:center;padding:35px 8px;color:#aaa0b4;font-size:12px;line-height:2;">
-        your photo goes here ♡<br>
-        upload a photo and name it<br>
-        <span class="pink">foto-kalian.jpg</span>
-      </div>
-    </div>
+      <button class="pill" type="submit">open your surprise ♡</button>
+    </form>
 
-    <div class="photo-caption">
-      not just a picture, but a little piece of our story ♡
-    </div>
-  </div>
-</section>
-
-<section class="section" id="memories">
-  <div class="section-label">02 / THE LITTLE THINGS</div>
-  <h2>Things I keep.</h2>
-
-  <div class="memories">
-    <div class="memory">
-      <div class="number">MEMORY_001</div>
-      <h3>Our conversations</h3>
-      <p>Even the random talks that probably mean nothing to anyone else, but somehow mean a lot to me.</p>
-    </div>
-
-    <div class="memory">
-      <div class="number">MEMORY_002</div>
-      <h3>The little moments</h3>
-      <p>The laughs, the silly things, and all those ordinary moments that became part of our story.</p>
-    </div>
-
-    <div class="memory">
-      <div class="number">MEMORY_003</div>
-      <h3>Learning from you</h3>
-      <p>It's kinda funny that the person who taught me HTML is now getting a little website made by me.</p>
-    </div>
-
-    <div class="memory">
-      <div class="number">MEMORY_004</div>
-      <h3>Still learning</h3>
-      <p>We're both growing and changing. I hope we can keep learning to understand each other, too.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-label">03 / A LETTER FOR YOU</div>
-  <h2>Something I wanna say.</h2>
-
-  <div class="card">
-    <div class="code-top">letter_to_daniel.txt</div>
-    <p style="color:var(--muted);font-size:13px;line-height:1.9;">
-      there's something i can't really put into a simple text,
-      so i made you a little place for it instead.
+    <p id="error"></p>
+    <p style="font-family:'Caveat';font-size:21px">
+      hint: our special date 🤍
     </p>
+  </div>
+</div>
 
-    <button id="letterButton" onclick="toggleLetter()">
-      open your letter ♡
+<div id="hearts"></div>
+
+<!-- WEBSITE CONTENT -->
+<div id="surprise">
+
+  <header class="hero">
+    <div class="eyebrow">a little page, made just for you</div>
+    <h1>HAPPY<br>BIRTHDAYYY! 🎂</h1>
+    <p>for my favorite person, my keken sayangg 🤍</p>
+    <div style="font-size:25px;margin-top:12px">♡ ✧ ♡</div>
+    <div class="scroll-note">scroll down, there's more for u ↓</div>
+  </header>
+
+  <!-- PHOTO GALLERY -->
+  <section class="content" id="memories">
+    <div class="section-label">little pieces of us</div>
+    <h2>the day we started dating</h2>
+    <p class="subtitle">some little memories that mean a lot to me ♡</p>
+
+    <div class="gallery">
+
+      <div class="polaroid">
+        <div class="photo-frame">
+          <div class="photo-placeholder">foto pertama kita ♡</div>
+          <img src="foto1.jpg" alt="Our first memory"
+               onload="this.previousElementSibling.style.display='none'"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="photo-caption">my favorite person ♡</div>
+      </div>
+
+      <div class="polaroid">
+        <div class="photo-frame">
+          <div class="photo-placeholder">foto kedua kita ♡</div>
+          <img src="foto2.jpg" alt="Another memory of us"
+               onload="this.previousElementSibling.style.display='none'"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="photo-caption">us, always ♡</div>
+      </div>
+
+      <div class="polaroid">
+        <div class="photo-frame">
+          <div class="photo-placeholder">foto ketiga kita ♡</div>
+          <img src="foto3.jpg" alt="One more memory of us"
+               onload="this.previousElementSibling.style.display='none'"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="photo-caption">a memory i keep close 🤍</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LETTER -->
+  <section class="letter-area" id="letter">
+    <div class="section-label">something from me to you</div>
+    <h2>a little letter for keken 💌</h2>
+    <p class="subtitle">tap the envelope to open it, sayangg</p>
+
+    <button class="envelope-button" id="envelopeButton"
+            aria-expanded="false" aria-controls="letterPaper">
+      <span class="envelope">
+        <span class="seal">🤍</span>
+      </span>
+      <span class="envelope-label">open me ♡</span>
     </button>
 
-    <div class="letter" id="letter">
-      <div class="letter-content">
-        <br>
-        happy birthday, daniel ♡
+    <article class="letter-paper" id="letterPaper">
+      <h3>HAPPY BIRTHDAYAY KEKEN SAYAAANGGG 🤍🤍🤍</h3>
 
-        first of all, i'm really glad that you exist.
-        and i'm glad that, somehow, our paths crossed and i got to know you the way i do now.
+      <p>first of all, i hope u know how precious u are, not just today but on your ordinary days too, aku harap di umur kamu yang sekarang akan semakin banyak hal baik yang datang ke kamuu, urusan kamu semuanya bisa dilalui dengan lancar, dan apa yang kamu usahain semoga satu per satu tercapai yaa...</p>
 
-        thank you for being part of my days, for the little things you've done, and for the memories we've made together. maybe i don't always know how to explain what i feel, but that doesn't mean those moments don't matter to me.
+      <p>di umur kamu yang ke 22 ini, aku berharap kamu bisa jadi versi diri kamu yang semakin baik lagi, semakin bahagia, semakin kuat buat ngejalanin apa pun yang ada di depan kamu, dan semoga kamu selalu dikelilingi hal hal baik yaa keken sayangg.</p>
 
-        i know we're both growing up, learning new things, and changing in our own ways. life won't always feel the same every day, but i hope you never forget how much your existence can mean to someone.
+      <p>makasih yaaa uda mau sama akuu, makasih uda hadir di hidup aku dan for becoming someone so special to me. aku seneng bisa kenal kamu sejauh ini, bisa punya cerita sama kamu, bisa ketawa bareng kamu, and honestly, aku berharap kita masih punya banyak banget waktu buat bikin cerita cerita lainnyaa.</p>
 
-        i hope this new chapter brings you more peace, good opportunities, happiness, and all the things you've been working hard for. i hope you become someone you're proud of, not just someone other people expect you to be.
+      <p>i hope we can spend more birthdays together, more time together, more random conversations, more laughing at the most random things, more little moments.. and i want us to be able to spend as much time together as possible, for as long as we can, keken. 🥹💗</p>
 
-        and please, don't forget to take care of yourself too, okay? you deserve good things, soft days, and reasons to smile even when life gets a little complicated.
+      <p>aku juga berharap kita bisa terus sama sama yaw kenn, belajar ngerti satu sama lain, dan makin kenal satu sama lain lagi.. pasti kita bakal ada aja beda pendapat atau berantem gara gara hal kecil, tapi semoga kita bisa lewatin itu bareng bareng yaa. aku masih mau punya banyak cerita sama kamuu, masih mau ketawa bareng kamu, pokoknya masih mau banyak hal sama kamuuu 🥹💗</p>
 
-        also, look at me making an actual website for you?? 😭 you literally taught me HTML, and now i'm using it to make you something. i guess some things really do come full circle.
+      <p>AND ONCE AGAINNN, HAPPY BIRTHDAY MY KEEKENNN SAYANK!! 🤍 semoga semua doa baik yang kamu simpen dalam hati bisa satu per satu jadi nyata yaa.</p>
 
-        i'm not the best at saying everything perfectly, but i hope this little website reminds you that someone put time, effort, and a whole lot of feelings into making it.
+      <p>i love youuu, keken sayangg. semoga di umur kamu yang sekarang ada lebih banyak alasan buat kamu senyum dan ngerasa bangga sama diri kamu sendiri. i'm so happy i get to know you, and i hope i still get to celebrate many more birthdays with youuu.</p>
 
-        happy birthday, kak daniel. i hope 24 october treats you kindly. i'm rooting for you, always. ♡
+      <p style="text-align:center;font-family:'Fredoka';font-size:18px">
+        HAPPY BIRTHDAY ONCE AGAINNN,<br>
+        MY KEKEKEKEN!! MWAHHH 🤍
+      </p>
 
-        <span class="signature">with love, grecia ♡</span>
-      </div>
+      <div class="signature">love, me ♡</div>
+    </article>
+  </section>
+
+  <!-- SECRET MESSAGE -->
+  <section class="secret-area">
+    <div class="section-label">psst... one last thing</div>
+    <h2>there's a tiny secret here</h2>
+    <p class="subtitle">can u find it? 🤍</p>
+
+    <button class="secret-heart" id="secretHeart"
+            aria-label="Reveal secret message">♡</button>
+
+    <div class="secret-message" id="secretMessage">
+      <div style="font-size:25px">🤍</div>
+      <p>secret unlocked!! WKWKWK 😭</p>
+      <p>you found my little secret, keken. there's still one more message i wanna tell you here ♡</p>
+      <p>happy birthday, sayangg. this little website is made with love, just for youuu 🤍</p>
+      <div style="font-family:'Caveat';font-size:23px">mwahhh ♡</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="section-label">04 / A LITTLE SECRET</div>
-  <h2>psst... over here.</h2>
+  <footer>
+    made with love, just for keken ♡<br>
+    <span style="font-family:'Caveat';font-size:18px">you'll always be part of my little memories 🤍</span>
+  </footer>
 
-  <div class="card" style="text-align:center;">
-    <p style="color:var(--muted);font-size:13px;line-height:1.9;">
-      some things aren't visible at first glance.
-      maybe you just need to click a little.
-    </p>
-    <button onclick="revealSecret()">try your luck ✦</button>
-
-    <div class="secret" id="secret">
-      <div style="font:11px 'DM Mono',monospace;">// easter_egg_found</div>
-      <br>
-      hey, daniel. remember when you taught me HTML?
-      <br><br>
-      little did you know, one day i'd use it to make a whole website for you.
-      <br><br>
-      <span style="font-size:21px;">♡</span>
-      <br>
-      turns out, the best thing i learned wasn't just code.
-      it was that little things can hold a lot of meaning.
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div>made with love & a little bit of code ♡</div>
-  <div style="margin-top:8px;">&lt;grecia&gt; for daniel / 24.10</div>
-  <div style="margin-top:18px;color:var(--pink);">end of file. not the end of the story.</div>
-</footer>
-
-</main>
+</div>
 
 <script>
-function toggleLetter() {
-  const letter = document.getElementById('letter');
-  const button = document.getElementById('letterButton');
+const form = document.getElementById('passwordForm');
+const passwordInput = document.getElementById('password');
+const errorText = document.getElementById('error');
+const gate = document.getElementById('gate');
+const surprise = document.getElementById('surprise');
+const hearts = document.getElementById('hearts');
 
-  letter.classList.toggle('open');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-  if (letter.classList.contains('open')) {
-    button.textContent = 'close your letter ♡';
-    setTimeout(() => {
-      letter.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 150);
+  if (passwordInput.value === '050925') {
+    errorText.textContent = '';
+    makeHearts();
+
+    setTimeout(function() {
+      gate.style.display = 'none';
+      surprise.style.display = 'block';
+      window.scrollTo(0, 0);
+    }, 1150);
   } else {
-    button.textContent = 'open your letter ♡';
+    errorText.textContent = 'hmm, coba inget-inget lagi yaa 🤍';
+    passwordInput.value = '';
+    passwordInput.focus();
+  }
+});
+
+function makeHearts() {
+  const symbols = ['🤍', '♡', '💗', '🩷', '✧', '💕'];
+
+  for (let i = 0; i < 32; i++) {
+    const heart = document.createElement('span');
+    heart.className = 'flying-heart';
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.style.setProperty('--x', (Math.random() * 560 - 280) + 'px');
+    heart.style.setProperty('--y', (Math.random() * 800 - 400) + 'px');
+    heart.style.setProperty('--r', (Math.random() * 160 - 80) + 'deg');
+    heart.style.animationDelay = (Math.random() * .25) + 's';
+
+    hearts.appendChild(heart);
+    setTimeout(() => heart.remove(), 1900);
   }
 }
 
-function revealSecret() {
-  const secret = document.getElementById('secret');
-  secret.classList.toggle('show');
+const envelopeButton = document.getElementById('envelopeButton');
+const letterPaper = document.getElementById('letterPaper');
 
-  if (secret.classList.contains('show')) {
-    secret.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+envelopeButton.addEventListener('click', function() {
+  const isOpen = letterPaper.classList.toggle('open');
+  envelopeButton.setAttribute('aria-expanded', String(isOpen));
+  envelopeButton.querySelector('.envelope-label').textContent =
+    isOpen ? 'close letter ♡' : 'open me ♡';
+
+  if (isOpen) {
+    setTimeout(() => {
+      letterPaper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   }
-}
+});
+
+const secretHeart = document.getElementById('secretHeart');
+const secretMessage = document.getElementById('secretMessage');
+
+secretHeart.addEventListener('click', function() {
+  secretMessage.style.display =
+    secretMessage.style.display === 'block' ? 'none' : 'block';
+
+  secretHeart.textContent =
+    secretMessage.style.display === 'block' ? '♥' : '♡';
+});
 </script>
 
 </body>
