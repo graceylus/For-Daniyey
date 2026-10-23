@@ -21,7 +21,9 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -32,7 +34,6 @@ body {
 }
 
 button, input { font: inherit; }
-
 button { cursor: pointer; }
 
 h1, h2, h3 {
@@ -41,10 +42,10 @@ h1, h2, h3 {
 }
 
 p { line-height: 1.9; }
-
 .hidden { display: none !important; }
 
 /* PASSWORD PAGE */
+
 #gate {
   min-height: 100svh;
   display: flex;
@@ -118,19 +119,47 @@ p { line-height: 1.9; }
   min-height: 20px;
 }
 
-/* MAIN WEBSITE */
+/* MUSIC BUTTON */
+
+.music-button {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 50;
+  border: 1px solid #ead5df;
+  border-radius: 30px;
+  padding: 10px 15px;
+  background: rgba(255,253,253,.94);
+  color: #827783;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px #8c77851a;
+}
+
+/* PAGE LAYOUT */
+
 #surprise { display: none; }
 
-.hero {
-  min-height: 72svh;
-  padding: 80px 22px 65px;
-  display: flex;
+.page {
+  min-height: 100svh;
+  padding: 75px 20px 45px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(155deg, #f4dfe6, #faf6f5 72%);
-  position: relative;
-  overflow: hidden;
+  animation: pageIn .7s ease both;
+}
+
+.page.active { display: flex; }
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .eyebrow {
@@ -141,34 +170,85 @@ p { line-height: 1.9; }
   color: #9b8e9c;
 }
 
-.hero h1 {
-  font-size: clamp(40px, 10vw, 68px);
-  line-height: 1.05;
-  margin: 16px 0;
+.page h1 {
+  font-size: clamp(36px, 9vw, 62px);
+  line-height: 1.1;
+  margin: 17px 0;
   color: #847987;
 }
 
-.hero p {
-  max-width: 310px;
+.page h2 {
+  font-size: clamp(28px, 7vw, 40px);
+  margin: 12px 0;
+  color: #817584;
+}
+
+.page p {
+  max-width: 450px;
   font-size: 14px;
 }
 
-.scroll-note {
+.nav-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 23px;
+  margin: 20px 5px 0;
+  background: #b8b3ba;
+  color: white;
+  font-weight: 700;
+  transition: transform .2s;
+}
+
+.nav-button:hover { transform: translateY(-2px); }
+
+.nav-button.secondary {
+  background: #f0dce4;
+  color: #827783;
+}
+
+.page-number {
   margin-top: 30px;
-  font-size: 12px;
-  color: #a399a5;
-  animation: bob 1.8s infinite;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #b1a3b0;
 }
 
-@keyframes bob {
-  50% { transform: translateY(6px); }
+/* INTRO */
+
+#intro {
+  background: linear-gradient(155deg, #f4dfe6, #faf6f5 72%);
 }
 
-section.content {
-  max-width: 850px;
-  margin: auto;
-  padding: 75px 20px;
+.intro-photo {
+  width: min(70vw, 260px);
+  aspect-ratio: 4 / 5;
+  margin: 20px auto;
+  padding: 9px 9px 16px;
+  background: white;
+  box-shadow: 0 12px 35px #8c77851c;
+  transform: rotate(-2deg);
 }
+
+.intro-photo .photo-frame { height: 100%; }
+
+.intro-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  color: #827783;
+  margin-top: 10px;
+}
+
+.intro-text {
+  animation: textIn 1s ease both;
+  animation-delay: .3s;
+}
+
+@keyframes textIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* PHOTO GALLERY */
 
 .section-label {
   font-size: 11px;
@@ -177,25 +257,21 @@ section.content {
   color: #a495a3;
 }
 
-section.content h2 {
-  font-size: clamp(28px, 7vw, 40px);
-  margin: 10px 0;
-  color: #817584;
-}
-
 .subtitle {
-  font-size: 13px;
+  font-size: 13px !important;
   color: #9b929d;
-  margin-bottom: 36px;
+  margin-bottom: 25px;
 }
 
-/* PHOTO GALLERY */
+#memories { background: #fffaf9; }
+
 .gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px 16px;
   max-width: 620px;
-  margin: 35px auto 0;
+  width: 100%;
+  margin: 25px auto;
 }
 
 .polaroid {
@@ -207,6 +283,7 @@ section.content h2 {
 }
 
 .polaroid:nth-child(2) { transform: rotate(2.5deg); }
+
 .polaroid:nth-child(3) {
   grid-column: 1 / -1;
   width: 72%;
@@ -251,14 +328,12 @@ section.content h2 {
 }
 
 /* LETTER */
-.letter-area {
-  background: #f0e9ee;
-  padding: 72px 20px;
-}
+
+#letter { background: #f0e9ee; }
 
 .envelope-button {
   display: block;
-  margin: 30px auto 10px;
+  margin: 25px auto;
   width: min(100%, 300px);
   border: 0;
   background: transparent;
@@ -323,7 +398,8 @@ section.content h2 {
   display: none;
   text-align: left;
   max-width: 620px;
-  margin: 28px auto 0;
+  width: 100%;
+  margin: 10px auto 25px;
   padding: clamp(22px, 6vw, 42px);
   border-radius: 8px;
   background: #fffdfb;
@@ -358,39 +434,24 @@ section.content h2 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* SECRET */
-.secret-area { padding: 50px 20px 85px; }
+/* ENDING */
 
-.secret-heart {
-  border: 0;
-  background: transparent;
-  font-size: 28px;
-  padding: 10px;
+#ending {
+  background: linear-gradient(155deg, #f4dfe6, #faf6f5 72%);
+}
+
+.ending-heart {
+  font-size: 35px;
+  margin: 15px;
   animation: heartbeat 1.5s infinite;
 }
 
 @keyframes heartbeat {
-  50% { transform: scale(1.15); }
+  50% { transform: scale(1.12); }
 }
 
-.secret-message {
-  display: none;
-  max-width: 400px;
-  margin: 15px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 20px;
-  font-size: 14px;
-  box-shadow: 0 8px 25px #8c77851a;
-}
+/* HEART ANIMATION */
 
-footer {
-  padding: 25px;
-  font-size: 12px;
-  color: #a59aa5;
-}
-
-/* HEART EXPLOSION */
 #hearts {
   position: fixed;
   inset: 0;
@@ -421,11 +482,17 @@ footer {
   }
 }
 
+footer {
+  padding: 25px;
+  font-size: 12px;
+  color: #a59aa5;
+}
+
 @media (max-width: 420px) {
   .gallery { gap: 16px 12px; }
   .polaroid { padding: 7px 7px 13px; }
   .photo-caption { font-size: 18px; }
-  section.content { padding: 60px 17px; }
+  .page { padding-left: 17px; padding-right: 17px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -439,12 +506,23 @@ footer {
 
 <body>
 
+<!-- MUSIC FILE -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="wte.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" class="music-button hidden" type="button">
+  ♡ Music: ON
+</button>
+
 <!-- PASSWORD PAGE -->
 <div id="gate">
   <div class="gate-card">
     <div class="cake">🎂</div>
     <div class="eyebrow">a little surprise for you</div>
+
     <h1>HAPPY BIRTHDAY<br>KEKEN SAYANGGG 🤍</h1>
+
     <p>before you enter, there's one little question for you ♡</p>
     <p><b>Enter your password:</b></p>
 
@@ -454,18 +532,22 @@ footer {
         id="password"
         type="password"
         inputmode="numeric"
-        maxlength="6"
-        placeholder="♡ ♡ ♡ ♡ ♡ ♡"
+        maxlength="4"
+        placeholder="♡ ♡ ♡ ♡"
         aria-label="Password"
         autocomplete="off"
         required
       >
-      <button class="pill" type="submit">open your surprise ♡</button>
+
+      <button class="pill" type="submit">
+        open your surprise ♡
+      </button>
     </form>
 
-    <p id="error"></p>
+    <p id="error" aria-live="polite"></p>
+
     <p style="font-family:'Caveat';font-size:21px">
-      hint: our special date 🤍
+      hint: (tanggal dan bulan ulang tahunmu)
     </p>
   </div>
 </div>
@@ -473,30 +555,53 @@ footer {
 <div id="hearts"></div>
 
 <!-- WEBSITE CONTENT -->
-<div id="surprise">
+<div id="surprise" class="hidden">
 
-  <header class="hero">
+  <!-- PAGE 1: INTRO + PHOTO -->
+  <section class="page" id="intro">
     <div class="eyebrow">a little page, made just for you</div>
-    <h1>HAPPY<br>BIRTHDAYYY! 🎂</h1>
-    <p>for my favorite person, my keken sayangg 🤍</p>
-    <div style="font-size:25px;margin-top:12px">♡ ✧ ♡</div>
-    <div class="scroll-note">scroll down, there's more for u ↓</div>
-  </header>
 
-  <!-- PHOTO GALLERY -->
-  <section class="content" id="memories">
+    <h1>HAPPY<br>BIRTHDAYYY! 🎂</h1>
+
+    <div class="intro-photo">
+      <div class="photo-frame">
+        <div class="photo-placeholder">foto kita ♡</div>
+        <img src="foto1.jpg" alt="Our first photo"
+          onload="this.previousElementSibling.style.display='none'"
+          onerror="this.style.display='none'">
+      </div>
+      <div class="intro-caption">my favorite person ♡</div>
+    </div>
+
+    <div class="intro-text">
+      <p>for my favorite person, my keken sayangg 🤍</p>
+      <p>
+        today is all about you, and i made this little
+        corner of the internet just for you.
+      </p>
+      <p>so take your time, sayangg. there's more waiting for u ♡</p>
+    </div>
+
+    <button class="nav-button" onclick="goToPage('memories')">
+      next page ♡ →
+    </button>
+
+    <div class="page-number">01 — 04</div>
+  </section>
+
+  <!-- PAGE 2: MEMORIES -->
+  <section class="page hidden" id="memories">
     <div class="section-label">little pieces of us</div>
     <h2>the day we started dating</h2>
     <p class="subtitle">some little memories that mean a lot to me ♡</p>
 
     <div class="gallery">
-
       <div class="polaroid">
         <div class="photo-frame">
           <div class="photo-placeholder">foto pertama kita ♡</div>
           <img src="foto1.jpg" alt="Our first memory"
-               onload="this.previousElementSibling.style.display='none'"
-               onerror="this.style.display='none'">
+            onload="this.previousElementSibling.style.display='none'"
+            onerror="this.style.display='none'">
         </div>
         <div class="photo-caption">my favorite person ♡</div>
       </div>
@@ -505,8 +610,8 @@ footer {
         <div class="photo-frame">
           <div class="photo-placeholder">foto kedua kita ♡</div>
           <img src="foto2.jpg" alt="Another memory of us"
-               onload="this.previousElementSibling.style.display='none'"
-               onerror="this.style.display='none'">
+            onload="this.previousElementSibling.style.display='none'"
+            onerror="this.style.display='none'">
         </div>
         <div class="photo-caption">us, always ♡</div>
       </div>
@@ -515,23 +620,36 @@ footer {
         <div class="photo-frame">
           <div class="photo-placeholder">foto ketiga kita ♡</div>
           <img src="foto3.jpg" alt="One more memory of us"
-               onload="this.previousElementSibling.style.display='none'"
-               onerror="this.style.display='none'">
+            onload="this.previousElementSibling.style.display='none'"
+            onerror="this.style.display='none'">
         </div>
         <div class="photo-caption">a memory i keep close 🤍</div>
       </div>
-
     </div>
+
+    <p>
+      every picture has its own little story,
+      and i'm glad i get to keep these memories.
+    </p>
+
+    <button class="nav-button secondary" onclick="goToPage('intro')">
+      ← previous
+    </button>
+    <button class="nav-button" onclick="goToPage('letter')">
+      next page ♡ →
+    </button>
+
+    <div class="page-number">02 — 04</div>
   </section>
 
-  <!-- LETTER -->
-  <section class="letter-area" id="letter">
+  <!-- PAGE 3: LETTER -->
+  <section class="page hidden" id="letter">
     <div class="section-label">something from me to you</div>
     <h2>a little letter for keken 💌</h2>
     <p class="subtitle">tap the envelope to open it, sayangg</p>
 
     <button class="envelope-button" id="envelopeButton"
-            aria-expanded="false" aria-controls="letterPaper">
+      aria-expanded="false" aria-controls="letterPaper">
       <span class="envelope">
         <span class="seal">🤍</span>
       </span>
@@ -562,30 +680,49 @@ footer {
 
       <div class="signature">love, me ♡</div>
     </article>
+
+    <button class="nav-button secondary" onclick="goToPage('memories')">
+      ← previous
+    </button>
+    <button class="nav-button" onclick="goToPage('ending')">
+      one last thing ♡ →
+    </button>
+
+    <div class="page-number">03 — 04</div>
   </section>
 
-  <!-- SECRET MESSAGE -->
-  <section class="secret-area">
-    <div class="section-label">psst... one last thing</div>
-    <h2>there's a tiny secret here</h2>
-    <p class="subtitle">can u find it? 🤍</p>
+  <!-- PAGE 4: ENDING -->
+  <section class="page hidden" id="ending">
+    <div class="eyebrow">and that's not all, sayangg</div>
+    <div class="ending-heart">🤍</div>
 
-    <button class="secret-heart" id="secretHeart"
-            aria-label="Reveal secret message">♡</button>
+    <h1>one last thing...</h1>
 
-    <div class="secret-message" id="secretMessage">
-      <div style="font-size:25px">🤍</div>
-      <p>secret unlocked!! WKWKWK 😭</p>
-      <p>you found my little secret, keken. there's still one more message i wanna tell you here ♡</p>
-      <p>happy birthday, sayangg. this little website is made with love, just for youuu 🤍</p>
-      <div style="font-family:'Caveat';font-size:23px">mwahhh ♡</div>
-    </div>
+    <p>
+      happy birthday once again, keken.
+      i hope this little gift makes your day
+      a little more special.
+    </p>
+
+    <p>
+      thank you for being part of my little memories.
+      here's to more good things coming your way ♡
+    </p>
+
+    <p style="font-family:'Caveat';font-size:28px">
+      made with love, just for you 🤍
+    </p>
+
+    <button class="nav-button secondary" onclick="goToPage('letter')">
+      ← read my letter again
+    </button>
+
+    <footer>
+      happy birthday, my keken ♡
+    </footer>
+
+    <div class="page-number">04 — 04</div>
   </section>
-
-  <footer>
-    made with love, just for keken ♡<br>
-    <span style="font-family:'Caveat';font-size:18px">you'll always be part of my little memories 🤍</span>
-  </footer>
 
 </div>
 
@@ -596,69 +733,129 @@ const errorText = document.getElementById('error');
 const gate = document.getElementById('gate');
 const surprise = document.getElementById('surprise');
 const hearts = document.getElementById('hearts');
+const audio = document.getElementById('bgMusic');
+const musicButton = document.getElementById('musicButton');
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', async function(event) {
   event.preventDefault();
 
-  if (passwordInput.value === '050925') {
-    errorText.textContent = '';
-    makeHearts();
-
-    setTimeout(function() {
-      gate.style.display = 'none';
-      surprise.style.display = 'block';
-      window.scrollTo(0, 0);
-    }, 1150);
-  } else {
+  if (passwordInput.value !== '2410') {
     errorText.textContent = 'hmm, coba inget-inget lagi yaa 🤍';
     passwordInput.value = '';
     passwordInput.focus();
+    return;
+  }
+
+  errorText.textContent = '';
+
+  // Try to start music after the password button is pressed.
+  try {
+    await audio.play();
+    musicButton.textContent = '♡ Music: ON';
+  } catch (error) {
+    musicButton.textContent = '♡ Music: OFF';
+  }
+
+  makeHearts();
+
+  setTimeout(function() {
+    gate.style.display = 'none';
+    surprise.classList.remove('hidden');
+    musicButton.classList.remove('hidden');
+    showPage('intro');
+  }, 700);
+});
+
+// Play/pause music.
+musicButton.addEventListener('click', async function() {
+  if (audio.paused) {
+    try {
+      await audio.play();
+      musicButton.textContent = '♡ Music: ON';
+    } catch (error) {
+      musicButton.textContent = '♡ Music: OFF';
+    }
+  } else {
+    audio.pause();
+    musicButton.textContent = '♡ Music: OFF';
   }
 });
 
+// Separate pages.
+function goToPage(pageId) {
+  showPage(pageId);
+}
+
+function showPage(pageId) {
+  document.querySelectorAll('#surprise .page').forEach(function(page) {
+    page.classList.add('hidden');
+    page.classList.remove('active');
+  });
+
+  const target = document.getElementById(pageId);
+
+  if (target) {
+    target.classList.remove('hidden');
+    target.classList.add('active');
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Floating hearts when password is correct.
 function makeHearts() {
   const symbols = ['🤍', '♡', '💗', '🩷', '✧', '💕'];
 
   for (let i = 0; i < 32; i++) {
     const heart = document.createElement('span');
     heart.className = 'flying-heart';
-    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
 
-    heart.style.setProperty('--x', (Math.random() * 560 - 280) + 'px');
-    heart.style.setProperty('--y', (Math.random() * 800 - 400) + 'px');
-    heart.style.setProperty('--r', (Math.random() * 160 - 80) + 'deg');
-    heart.style.animationDelay = (Math.random() * .25) + 's';
+    heart.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.style.setProperty(
+      '--x', (Math.random() * 560 - 280) + 'px'
+    );
+    heart.style.setProperty(
+      '--y', (Math.random() * 800 - 400) + 'px'
+    );
+    heart.style.setProperty(
+      '--r', (Math.random() * 160 - 80) + 'deg'
+    );
+
+    heart.style.animationDelay =
+      (Math.random() * .25) + 's';
 
     hearts.appendChild(heart);
-    setTimeout(() => heart.remove(), 1900);
+
+    setTimeout(function() {
+      heart.remove();
+    }, 1900);
   }
 }
 
+// Open and close the letter.
 const envelopeButton = document.getElementById('envelopeButton');
 const letterPaper = document.getElementById('letterPaper');
 
 envelopeButton.addEventListener('click', function() {
   const isOpen = letterPaper.classList.toggle('open');
-  envelopeButton.setAttribute('aria-expanded', String(isOpen));
+
+  envelopeButton.setAttribute(
+    'aria-expanded', String(isOpen)
+  );
+
   envelopeButton.querySelector('.envelope-label').textContent =
     isOpen ? 'close letter ♡' : 'open me ♡';
 
   if (isOpen) {
-    setTimeout(() => {
-      letterPaper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function() {
+      letterPaper.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }, 100);
   }
-});
-
-const secretHeart = document.getElementById('secretHeart');
-const secretMessage = document.getElementById('secretMessage');
-
-secretHeart.addEventListener('click', function() {
-  secretMessage.style.display =
-    secretMessage.style.display === 'block' ? 'none' : 'block';
-
-  secretHeart.textContent =
-    secretMessage.style.display === 'block' ? '♥' : '♡';
 });
 </script>
 
