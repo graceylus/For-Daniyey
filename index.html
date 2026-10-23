@@ -4,18 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday, Keken ♡</title>
+<title>for keken ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --pink: #f0d8e2;
-  --pink-dark: #d7b2c3;
-  --cream: #fffaf7;
+  --cream: #fffaf3;
+  --pink: #f2dce4;
+  --pink-dark: #d9b7c5;
   --grey: #aaa3ad;
-  --text: #746977;
+  --grey-dark: #817785;
+  --text: #716773;
+  --white: #fffefd;
 }
 
 * {
@@ -28,8 +30,8 @@ html {
 
 body {
   margin: 0;
-  color: var(--text);
   background: var(--cream);
+  color: var(--text);
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -45,7 +47,7 @@ button {
   display: none !important;
 }
 
-/* PASSWORD */
+/* PASSWORD PAGE */
 
 #gate {
   min-height: 100vh;
@@ -55,41 +57,42 @@ button {
   justify-content: center;
   padding: 24px;
   text-align: center;
-  background: linear-gradient(145deg, #f4dfe7, #fffaf7, #eee6ef);
+  background:
+    radial-gradient(circle at 12% 18%, #fffefd 0 5%, transparent 5.5%),
+    radial-gradient(circle at 88% 82%, #e8dfe8 0 6%, transparent 6.5%),
+    linear-gradient(145deg, var(--pink), var(--cream) 58%, #e9e3eb);
 }
 
 .gate-card {
   width: 100%;
-  max-width: 400px;
-  padding: 35px 23px;
-  border: 2px solid #fff;
-  border-radius: 28px;
-  background: rgba(255,255,255,.78);
-  box-shadow: 0 15px 40px #b8a4b322;
+  max-width: 390px;
+  padding: 34px 23px;
+  border: 2px solid rgba(255,255,255,.9);
+  border-radius: 30px;
+  background: rgba(255,254,253,.83);
+  box-shadow: 0 15px 40px #96879518;
 }
 
 .cake {
-  font-size: 48px;
+  font-size: 43px;
+  margin-bottom: 12px;
 }
 
 .eyebrow {
-  font-size: 11px;
+  color: #a38d9e;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #a38d9f;
-}
-
-h1, h2, h3 {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 500;
 }
 
 .gate-card h1 {
-  font-size: clamp(30px, 8vw, 40px);
+  margin: 15px 0;
+  color: var(--grey-dark);
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(29px, 8vw, 39px);
   line-height: 1.2;
-  color: #89768b;
-  margin: 16px 0;
+  font-weight: 500;
 }
 
 .gate-card p {
@@ -98,13 +101,13 @@ h1, h2, h3 {
 }
 
 .password {
-  width: 100%;
-  max-width: 250px;
   display: block;
-  margin: 20px auto 13px;
-  padding: 14px;
-  border: 1.5px solid #e3c9d5;
-  border-radius: 15px;
+  width: 100%;
+  max-width: 245px;
+  margin: 20px auto 14px;
+  padding: 13px;
+  border: 1.5px solid #e2c7d3;
+  border-radius: 16px;
   background: white;
   color: var(--text);
   font-size: 22px;
@@ -115,21 +118,21 @@ h1, h2, h3 {
 }
 
 .password:focus {
-  border-color: #b69bad;
+  border-color: #b9a5b7;
 }
 
 .pill {
   border: none;
   border-radius: 30px;
-  padding: 13px 23px;
-  background: #b7aab9;
+  padding: 12px 23px;
+  background: var(--grey);
   color: white;
   font-weight: 700;
   transition: .2s;
 }
 
 .pill:hover {
-  background: #99889c;
+  background: var(--grey-dark);
   transform: translateY(-2px);
 }
 
@@ -139,24 +142,24 @@ h1, h2, h3 {
   font-size: 12px;
 }
 
-/* MUSIC */
+/* MUSIC BUTTON */
 
 .music-button {
   position: fixed;
-  z-index: 100;
   top: 14px;
   right: 14px;
+  z-index: 100;
+  padding: 9px 14px;
   border: 1px solid #ead8e1;
   border-radius: 30px;
-  padding: 10px 15px;
-  background: rgba(255,250,247,.95);
-  color: #89768b;
+  background: rgba(255,250,243,.96);
+  color: var(--grey-dark);
   font-size: 12px;
   font-weight: 700;
   box-shadow: 0 4px 15px #8d78851a;
 }
 
-/* PAGE STRUCTURE */
+/* PAGES */
 
 #surprise {
   width: 100%;
@@ -164,15 +167,15 @@ h1, h2, h3 {
 
 .page {
   display: none;
+  width: 100%;
   min-height: 100vh;
   min-height: 100svh;
-  width: 100%;
-  padding: 85px 20px 40px;
+  padding: 80px 20px 38px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  animation: fadeIn .5s ease;
+  animation: fadeIn .55s ease;
 }
 
 .page.active {
@@ -182,7 +185,7 @@ h1, h2, h3 {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(9px);
   }
   to {
     opacity: 1;
@@ -190,16 +193,23 @@ h1, h2, h3 {
   }
 }
 
+.page h1,
+.page h2,
+.page h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
+}
+
 .page h1 {
-  color: #89768b;
-  font-size: clamp(39px, 10vw, 62px);
-  line-height: 1.08;
+  color: var(--grey-dark);
+  font-size: clamp(40px, 10vw, 60px);
+  line-height: 1.1;
   margin: 18px 0;
 }
 
 .page h2 {
-  color: #89768b;
-  font-size: clamp(28px, 7vw, 39px);
+  color: var(--grey-dark);
+  font-size: clamp(28px, 7vw, 38px);
   margin: 12px 0;
 }
 
@@ -209,19 +219,12 @@ h1, h2, h3 {
   line-height: 1.9;
 }
 
-.page-number {
-  margin-top: 30px;
-  color: #b4a5b3;
-  font-size: 11px;
-  letter-spacing: 3px;
-}
-
 .nav-button {
-  margin: 16px 4px 0;
+  margin: 18px 4px 0;
   padding: 12px 22px;
   border: none;
   border-radius: 30px;
-  background: #b7aab9;
+  background: var(--grey);
   color: white;
   font-weight: 700;
   transition: .2s;
@@ -229,38 +232,102 @@ h1, h2, h3 {
 
 .nav-button:hover {
   transform: translateY(-2px);
+  background: var(--grey-dark);
 }
 
 .nav-button.secondary {
-  background: #f0dfe7;
-  color: #89768b;
+  background: #f0dfe6;
+  color: var(--grey-dark);
+}
+
+.page-number {
+  margin-top: 27px;
+  color: #b4a5b3;
+  font-size: 10px;
+  letter-spacing: 3px;
 }
 
 /* PAGE 1: INTRO */
 
 #intro {
-  background: linear-gradient(155deg, #f4dfe7, #fffaf7 75%);
+  background: linear-gradient(150deg, #f3dfe6, var(--cream) 72%);
 }
 
-.intro-photo {
-  width: min(68vw, 245px);
-  aspect-ratio: 4 / 5;
+.intro-decoration {
+  margin: 12px 0;
+  color: #c3a8b9;
+  font-size: 25px;
+  letter-spacing: 12px;
+}
+
+.intro-text {
+  max-width: 430px;
+  animation: fadeIn .9s ease .15s both;
+}
+
+.intro-text p {
+  margin: 12px auto;
+}
+
+.handwritten {
+  font-family: 'Caveat', cursive;
+  font-size: 25px !important;
+  color: #9c8196;
+}
+
+/* PAGE 2: MEMORIES */
+
+#memories {
+  background: var(--cream);
+}
+
+.subtitle {
+  margin-bottom: 22px;
+  color: #a195a2;
+  font-size: 13px !important;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 15px;
+  width: 100%;
+  max-width: 570px;
+  margin: 20px auto;
+}
+
+.polaroid {
   padding: 9px 9px 15px;
-  margin: 18px auto;
-  background: white;
-  box-shadow: 0 12px 32px #8d78851c;
+  background: var(--white);
+  border: 1px solid #f1e9e9;
+  box-shadow: 0 8px 24px #8d78851a;
   transform: rotate(-2deg);
+}
+
+.polaroid:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.polaroid:nth-child(3) {
+  grid-column: 1 / -1;
+  width: 75%;
+  justify-self: center;
+  transform: rotate(-1deg);
 }
 
 .photo-frame {
   position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, #f5e4eb, #eae5ed);
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f4e5e9, #eae5ec);
+}
+
+.polaroid:nth-child(3) .photo-frame {
+  aspect-ratio: 16 / 10;
 }
 
 .photo-frame img {
@@ -277,60 +344,6 @@ h1, h2, h3 {
   font-size: 12px;
 }
 
-.intro-caption {
-  margin-top: 10px;
-  font-family: 'Caveat', cursive;
-  font-size: 22px;
-  color: #89768b;
-}
-
-.intro-text {
-  animation: fadeIn 1s ease .2s both;
-}
-
-/* PAGE 2: MEMORIES */
-
-#memories {
-  background: #fffaf7;
-}
-
-.subtitle {
-  color: #a195a2;
-  font-size: 13px !important;
-  margin-bottom: 20px;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px 15px;
-  width: 100%;
-  max-width: 570px;
-  margin: 20px auto;
-}
-
-.polaroid {
-  padding: 9px 9px 15px;
-  background: white;
-  box-shadow: 0 8px 24px #8d78851a;
-  transform: rotate(-2deg);
-}
-
-.polaroid:nth-child(2) {
-  transform: rotate(2deg);
-}
-
-.polaroid:nth-child(3) {
-  grid-column: 1 / -1;
-  width: 75%;
-  justify-self: center;
-  transform: rotate(-1deg);
-}
-
-.polaroid:nth-child(3) .photo-frame {
-  aspect-ratio: 16 / 10;
-}
-
 .photo-caption {
   margin-top: 11px;
   font-family: 'Caveat', cursive;
@@ -341,13 +354,13 @@ h1, h2, h3 {
 /* PAGE 3: LETTER */
 
 #letter {
-  background: linear-gradient(155deg, #f0e7ef, #fffaf7);
+  background: linear-gradient(150deg, #eee6ef, var(--cream) 75%);
 }
 
 .envelope-button {
   display: block;
   width: min(100%, 300px);
-  margin: 25px auto;
+  margin: 24px auto;
   padding: 0;
   border: none;
   background: transparent;
@@ -359,7 +372,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 170px;
+  height: 165px;
   overflow: hidden;
   border-radius: 8px;
   background: #d9cbd9;
@@ -378,13 +391,13 @@ h1, h2, h3 {
 
 .envelope:before {
   left: 0;
-  border-width: 0 0 115px 150px;
+  border-width: 0 0 112px 150px;
   border-color: transparent transparent #e8dce7 transparent;
 }
 
 .envelope:after {
   right: 0;
-  border-width: 0 150px 115px 0;
+  border-width: 0 150px 112px 0;
   border-color: transparent transparent #e1d3e1 transparent;
 }
 
@@ -392,8 +405,8 @@ h1, h2, h3 {
   z-index: 1;
   display: grid;
   place-items: center;
-  width: 55px;
-  height: 55px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: #f9eaf0;
   font-size: 25px;
@@ -401,7 +414,7 @@ h1, h2, h3 {
 
 .envelope-label {
   display: block;
-  margin-top: 15px;
+  margin-top: 14px;
   font-family: 'Fredoka', sans-serif;
   font-size: 17px;
 }
@@ -412,8 +425,9 @@ h1, h2, h3 {
   max-width: 620px;
   margin: 10px auto 25px;
   padding: clamp(22px, 6vw, 42px);
+  border: 1px solid #f1e6e9;
   border-radius: 9px;
-  background: #fffdfb;
+  background: #fffefd;
   box-shadow: 0 12px 35px #8d78851a;
   text-align: left;
 }
@@ -444,22 +458,6 @@ h1, h2, h3 {
   text-align: right;
 }
 
-/* PAGE 4: ENDING */
-
-#ending {
-  background: linear-gradient(155deg, #f4dfe7, #fffaf7 75%);
-}
-
-.ending-heart {
-  margin: 18px;
-  font-size: 38px;
-  animation: heartbeat 1.5s infinite;
-}
-
-@keyframes heartbeat {
-  50% { transform: scale(1.12); }
-}
-
 /* HEARTS */
 
 #hearts {
@@ -472,8 +470,8 @@ h1, h2, h3 {
 
 .flying-heart {
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   font-size: 24px;
   animation: burst 1.5s ease-out forwards;
 }
@@ -490,12 +488,6 @@ h1, h2, h3 {
       calc(-50% + var(--y))
     ) rotate(var(--r)) scale(1.5);
   }
-}
-
-footer {
-  margin-top: 20px;
-  color: #a99ca8;
-  font-size: 12px;
 }
 
 @media (max-width: 420px) {
@@ -529,7 +521,7 @@ footer {
   ♡ Music: ON
 </button>
 
-<!-- PASSWORD PAGE -->
+<!-- PASSWORD -->
 <div id="gate">
   <div class="gate-card">
     <div class="cake">🎂</div>
@@ -537,8 +529,8 @@ footer {
 
     <h1>HAPPY BIRTHDAY<br>KEKEN SAYANGGG 🤍</h1>
 
-    <p>before you enter, there's one little question for you ♡</p>
-    <p><b>Enter your password:</b></p>
+    <p>before you enter, there's a little surprise waiting for you ♡</p>
+    <p><b>enter your password</b></p>
 
     <form id="passwordForm">
       <input
@@ -561,56 +553,55 @@ footer {
     <p id="error" aria-live="polite"></p>
 
     <p style="font-family:'Caveat';font-size:21px">
-      hint: (the date and month of your birthday)
+      hint: the date and month of your birthday
     </p>
   </div>
 </div>
 
 <div id="hearts"></div>
 
-<!-- ALL WEBSITE PAGES -->
 <div id="surprise" class="hidden">
 
-  <!-- PAGE 1 -->
+  <!-- PAGE 1: INTRO -->
   <section class="page" id="intro">
-    <div class="eyebrow">a little page, made just for you</div>
+    <div class="eyebrow">a little something for you</div>
 
-    <h1>HAPPY<br>BIRTHDAYYY! 🎂</h1>
+    <h1>HAPPY<br>BIRTHDAYYY! ♡</h1>
 
-    <div class="intro-photo">
-      <div class="photo-frame">
-        <div class="photo-placeholder">our photo ♡</div>
-        <img src="foto1.jpg" alt="Our photo">
-      </div>
-      <div class="intro-caption">my favorite person ♡</div>
-    </div>
+    <div class="intro-decoration">♡ ✿ ♡</div>
 
     <div class="intro-text">
       <p>for my favorite person, my keken sayangg 🤍</p>
+
       <p>
-        today is all about you, and i made this little
-        corner of the internet just for you.
+        i made this little corner just for you,
+        so take your time and enjoy it, okayy?
       </p>
-      <p>so take your time, sayangg. there's more waiting for u ♡</p>
+
+      <p class="handwritten">made with love, just for you ♡</p>
     </div>
 
     <button class="nav-button" onclick="goToPage('memories')">
       next page ♡ →
     </button>
 
-    <div class="page-number">01 — 04</div>
+    <div class="page-number">01 — 03</div>
   </section>
 
-  <!-- PAGE 2 -->
+  <!-- PAGE 2: ALL THREE PHOTOS -->
   <section class="page" id="memories">
     <div class="eyebrow">little pieces of us</div>
-    <h2>the day we started dating</h2>
-    <p class="subtitle">some little memories that mean a lot to me ♡</p>
+    <h2>our little memories ♡</h2>
+
+    <p class="subtitle">
+      some moments i want to keep close to my heart
+    </p>
 
     <div class="gallery">
+
       <div class="polaroid">
         <div class="photo-frame">
-          <div class="photo-placeholder">our first photo ♡</div>
+          <span class="photo-placeholder">our first photo ♡</span>
           <img src="foto1.jpg" alt="Our first photo">
         </div>
         <div class="photo-caption">my favorite person ♡</div>
@@ -618,7 +609,7 @@ footer {
 
       <div class="polaroid">
         <div class="photo-frame">
-          <div class="photo-placeholder">another memory ♡</div>
+          <span class="photo-placeholder">another memory ♡</span>
           <img src="foto2.jpg" alt="Another memory">
         </div>
         <div class="photo-caption">us, always ♡</div>
@@ -626,32 +617,35 @@ footer {
 
       <div class="polaroid">
         <div class="photo-frame">
-          <div class="photo-placeholder">one more memory ♡</div>
+          <span class="photo-placeholder">one more memory ♡</span>
           <img src="foto3.jpg" alt="One more memory">
         </div>
-        <div class="photo-caption">a memory i keep close 🤍</div>
+        <div class="photo-caption">a little piece of us 🤍</div>
       </div>
+
     </div>
 
     <p>
-      every picture has its own little story,
-      and i'm glad i get to keep these memories.
+      every picture has its own story,
+      and i'm happy these moments are part of ours.
     </p>
 
     <button class="nav-button secondary" onclick="goToPage('intro')">
       ← previous
     </button>
+
     <button class="nav-button" onclick="goToPage('letter')">
       next page ♡ →
     </button>
 
-    <div class="page-number">02 — 04</div>
+    <div class="page-number">02 — 03</div>
   </section>
 
-  <!-- PAGE 3 -->
+  <!-- PAGE 3: LETTER -->
   <section class="page" id="letter">
     <div class="eyebrow">something from me to you</div>
     <h2>a little letter for keken 💌</h2>
+
     <p class="subtitle">tap the envelope to open it, sayangg</p>
 
     <button
@@ -695,42 +689,8 @@ footer {
     <button class="nav-button secondary" onclick="goToPage('memories')">
       ← previous
     </button>
-    <button class="nav-button" onclick="goToPage('ending')">
-      one last thing ♡ →
-    </button>
 
-    <div class="page-number">03 — 04</div>
-  </section>
-
-  <!-- PAGE 4 -->
-  <section class="page" id="ending">
-    <div class="eyebrow">and that's not all, sayangg</div>
-    <div class="ending-heart">🤍</div>
-
-    <h1>one last thing...</h1>
-
-    <p>
-      happy birthday once again, keken.
-      i hope this little gift makes your day
-      a little more special.
-    </p>
-
-    <p>
-      thank you for being part of my little memories.
-      here's to more good things coming your way ♡
-    </p>
-
-    <p style="font-family:'Caveat';font-size:28px">
-      made with love, just for you 🤍
-    </p>
-
-    <button class="nav-button secondary" onclick="goToPage('letter')">
-      ← read my letter again
-    </button>
-
-    <footer>happy birthday, my keken ♡</footer>
-
-    <div class="page-number">04 — 04</div>
+    <div class="page-number">03 — 03</div>
   </section>
 
 </div>
@@ -762,6 +722,7 @@ form.addEventListener('submit', async function(event) {
   gate.classList.add('hidden');
   surprise.classList.remove('hidden');
   musicButton.classList.remove('hidden');
+
   showPage('intro');
 
   try {
@@ -822,8 +783,8 @@ function makeHearts() {
     heart.style.setProperty(
       '--r', (Math.random() * 160 - 80) + 'deg'
     );
-    heart.style.animationDelay = (Math.random() * .2) + 's';
 
+    heart.style.animationDelay = (Math.random() * .2) + 's';
     hearts.appendChild(heart);
 
     setTimeout(function() {
@@ -852,24 +813,26 @@ envelopeButton.addEventListener('click', function() {
   }
 });
 
-/* Keep photo placeholders visible if a photo file is missing. */
+/* Photo fallback: missing photos won't hide the page. */
 document.querySelectorAll('.photo-frame img').forEach(function(img) {
-  function checkPhoto() {
-    const placeholder = img.previousElementSibling;
+  const placeholder = img.previousElementSibling;
 
-    if (img.complete && img.naturalWidth > 0) {
+  function updatePhoto() {
+    if (img.naturalWidth > 0) {
       img.style.display = 'block';
-      if (placeholder) placeholder.style.display = 'none';
-    } else if (img.complete) {
+      placeholder.style.display = 'none';
+    } else {
       img.style.display = 'none';
-      if (placeholder) placeholder.style.display = 'block';
+      placeholder.style.display = 'block';
     }
   }
 
-  img.addEventListener('load', checkPhoto);
-  img.addEventListener('error', checkPhoto);
+  img.addEventListener('load', updatePhoto);
+  img.addEventListener('error', updatePhoto);
 
-  if (img.complete) checkPhoto();
+  if (img.complete) {
+    updatePhoto();
+  }
 });
 </script>
 
