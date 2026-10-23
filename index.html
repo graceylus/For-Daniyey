@@ -1,629 +1,644 @@
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>for my keken ♡</title>
+<title>for keken ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --pink: #e8b7c3;
-  --pink-dark: #b8798d;
-  --pink-light: #f9e7e9;
-  --cream: #fff8ee;
-  --grey: #d7d0d0;
-  --grey-dark: #81777a;
-  --ink: #67575c;
-  --white: #fffdfb;
+  --cream: #fffaf3;
+  --pink: #f1dce2;
+  --pink-dark: #d9aebd;
+  --grey: #77747b;
+  --dark: #45414a;
+  --white: #ffffff;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
-  min-height: 100vh;
   background: var(--cream);
-  color: var(--ink);
+  color: var(--dark);
   font-family: 'Quicksand', sans-serif;
   overflow-x: hidden;
 }
 
-button, input { font: inherit; }
-
-button { -webkit-tap-highlight-color: transparent; }
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .35;
-  z-index: 0;
-  background-image: radial-gradient(#d9b9bf 0.65px, transparent 0.65px);
-  background-size: 17px 17px;
-}
-
-.hidden { display: none !important; }
-
-/* PASSWORD PAGE */
-#gate {
-  position: relative;
-  z-index: 1;
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding: 24px 16px;
-  overflow: hidden;
-}
-
-.gate-card {
-  width: min(100%, 390px);
-  padding: 35px 25px 30px;
-  text-align: center;
-  position: relative;
-  background: rgba(255,253,251,.91);
-  border: 1px solid #ead5d7;
-  border-radius: 32px;
-  box-shadow: 0 15px 50px #b88e9721;
-  animation: floatIn .9s ease both;
-}
-
-.gate-card::before {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border: 1px dashed #e4bdc8;
-  border-radius: 25px;
-  pointer-events: none;
-}
-
-.bow {
-  font-size: 42px;
-  line-height: 1.2;
-  margin-bottom: 12px;
-  animation: bob 3s ease-in-out infinite;
-}
-
-.eyebrow {
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--grey-dark);
-  font-weight: 700;
-}
-
-h1, h2, h3, p { margin-top: 0; }
-
-.gate-card h1 {
-  font: 600 clamp(29px, 8vw, 39px)/1.15 'Fredoka', sans-serif;
-  color: var(--pink-dark);
-  margin: 12px 0;
-}
-
-.gate-card .subtitle {
-  font-size: 13px;
-  line-height: 1.9;
-  margin: 0 auto 23px;
-  max-width: 270px;
-}
-
-.password-input {
-  width: 100%;
-  border: 1px solid #e5c6cd;
-  border-radius: 16px;
-  background: #fff8f5;
-  outline: none;
-  padding: 15px;
-  text-align: center;
-  letter-spacing: 8px;
-  color: var(--ink);
-  transition: .25s ease;
-}
-
-.password-input:focus {
-  border-color: var(--pink-dark);
-  box-shadow: 0 0 0 4px #e8b7c329;
-}
-
-.primary-btn {
-  width: 100%;
-  border: none;
-  border-radius: 15px;
-  padding: 14px 18px;
-  margin-top: 12px;
-  background: var(--pink);
-  color: #fffdfb;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 5px 0 #c996a5;
-  transition: transform .2s, box-shadow .2s, background .2s;
-}
-
-.primary-btn:hover {
-  background: var(--pink-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 7px 0 #a66e80;
-}
-
-.primary-btn:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 #c996a5;
-}
-
-.hint {
-  margin: 19px 0 0;
-  font-size: 11px;
-  color: #9a858b;
-  font-style: italic;
-}
-
-#error {
-  font-size: 12px;
-  color: #b8798d;
-  margin: 12px 0 0;
-  min-height: 15px;
-}
-
-.corner {
-  position: absolute;
-  font-size: 23px;
-  color: #d9a5b5;
-}
-.corner.one { top: 16px; left: 18px; }
-.corner.two { top: 16px; right: 18px; }
-.corner.three { bottom: 18px; left: 20px; }
-.corner.four { bottom: 18px; right: 20px; }
-
-/* MAIN WEBSITE */
-#site {
-  position: relative;
-  z-index: 1;
-  min-height: 100svh;
-}
-
-.music-control {
-  position: fixed;
-  z-index: 20;
-  top: 14px;
-  right: 14px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  border: 1px solid #ead4d9;
-  background: #fffaf4eF;
-  color: var(--pink-dark);
-  border-radius: 50px;
-  padding: 10px 14px;
-  font-size: 12px;
-  font-weight: 700;
-  box-shadow: 0 4px 15px #9b6f7815;
+button {
+  font-family: inherit;
   cursor: pointer;
 }
 
-.music-control.playing .music-dot {
-  animation: pulse 1s infinite;
-}
-
-.music-dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  background: var(--pink-dark);
-  border-radius: 50%;
+.hidden {
+  display: none !important;
 }
 
 .page {
   display: none;
   min-height: 100svh;
-  padding: 85px 20px 35px;
+  padding: 75px 20px 45px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
   position: relative;
 }
 
 .page.active {
   display: flex;
-  animation: pageIn .7s cubic-bezier(.22,.75,.25,1) both;
+  animation: fadeIn .8s ease both;
 }
 
-.page-inner {
-  width: min(100%, 720px);
-  margin: auto;
-  position: relative;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.section-label {
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #a58c91;
-  font-weight: 700;
-  margin-bottom: 15px;
+h1, h2, h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
 }
 
-.script {
-  font: 600 34px/1.2 'Caveat', cursive;
-  color: var(--pink-dark);
+p {
+  line-height: 1.8;
 }
 
-.display-title {
-  font: 600 clamp(31px, 8vw, 49px)/1.15 'Fredoka', sans-serif;
-  color: var(--pink-dark);
-  margin-bottom: 16px;
+button:focus-visible {
+  outline: 3px solid var(--pink-dark);
+  outline-offset: 4px;
 }
 
-.body-copy {
-  font-size: 14px;
-  line-height: 2;
-  max-width: 450px;
-  margin: 0 auto 25px;
-}
+/* MUSIC */
 
-.decor-heart {
-  color: var(--pink);
-  display: inline-block;
-  animation: bob 2.8s ease-in-out infinite;
-}
-
-.soft-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: center;
-  margin: 20px auto;
-  color: #c5a6ad;
+.music-control {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  border: 1px solid #e8d8dc;
+  border-radius: 30px;
+  padding: 10px 15px;
+  background: #fffaf3ee;
+  color: var(--dark);
+  box-shadow: 0 4px 15px #78616a12;
   font-size: 12px;
 }
 
-.soft-divider::before, .soft-divider::after {
-  content: "";
-  height: 1px;
-  width: 45px;
-  background: #e5cbd0;
+.music-control:active {
+  transform: scale(.96);
 }
 
-.next-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: var(--white);
-  color: var(--pink-dark);
-  border: 1px solid #e6c5ce;
-  border-radius: 50px;
-  padding: 13px 22px;
-  font-weight: 700;
+/* PASSWORD PAGE */
+
+#gate {
+  background:
+    radial-gradient(circle at 15% 15%, #f5e4e8 0, transparent 30%),
+    radial-gradient(circle at 85% 85%, #e8e6e8 0, transparent 28%),
+    var(--cream);
+}
+
+.gate-card {
+  width: min(100%, 390px);
+  padding: 35px 25px;
+  text-align: center;
+  border: 1px solid #eadde0;
+  border-radius: 30px;
+  background: #ffffffa8;
+  box-shadow: 0 15px 50px #84717b13;
+  backdrop-filter: blur(8px);
+}
+
+.cake {
+  font-size: 48px;
+  animation: cakeFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes cakeFloat {
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+.eyebrow {
+  color: var(--grey);
+  letter-spacing: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.gate-card h1 {
+  font-size: clamp(32px, 8vw, 43px);
+  margin: 12px 0 5px;
+}
+
+.gate-card .subtitle {
+  color: var(--grey);
   font-size: 13px;
-  box-shadow: 0 5px 16px #a8798417;
-  cursor: pointer;
-  transition: .25s ease;
+  margin-bottom: 25px;
 }
 
-.next-btn:hover {
-  transform: translateY(-3px);
-  background: var(--pink-light);
-  box-shadow: 0 8px 20px #a8798426;
+.password-input {
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+  letter-spacing: 8px;
+  font-size: 20px;
+  color: var(--dark);
+  background: #fff;
+  border: 1px solid #e7d5db;
+  border-radius: 15px;
+  outline: none;
 }
 
-.tiny-note {
-  margin-top: 17px;
-  font: 500 21px 'Caveat', cursive;
-  color: #a18b90;
+.password-input:focus {
+  border-color: var(--pink-dark);
+  box-shadow: 0 0 0 3px #f1dce266;
 }
 
-.sparkle {
+.main-button {
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 23px;
+  margin-top: 16px;
+  background: var(--dark);
+  color: white;
+  transition: transform .2s, background .2s;
+  font-weight: 700;
+}
+
+.main-button:hover {
+  background: #625964;
+  transform: translateY(-2px);
+}
+
+.hint {
+  font-size: 11px;
+  color: #99919a;
+  margin-top: 18px;
+}
+
+.error {
+  min-height: 20px;
+  font-size: 12px;
+  color: #b46f83;
+  margin: 8px 0 0;
+}
+
+/* HEART EXPLOSION */
+
+#burst {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.burst-center {
+  font-size: 50px;
+  animation: pulse .65s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+@keyframes pulse {
+  to { transform: scale(1.3); }
+}
+
+.heart-particle {
   position: absolute;
-  color: #d7b1ba;
-  font-size: 22px;
-  animation: bob 3s ease-in-out infinite;
+  left: 50%;
+  top: 50%;
+  font-size: var(--size, 22px);
+  animation: heartFly var(--duration, 1.5s) ease-out forwards;
+  pointer-events: none;
 }
-.sparkle.s1 { top: 7%; left: 10%; }
-.sparkle.s2 { top: 22%; right: 9%; animation-delay: .7s; }
-.sparkle.s3 { bottom: 15%; left: 13%; animation-delay: 1.2s; }
-.sparkle.s4 { bottom: 20%; right: 12%; animation-delay: .3s; }
+
+@keyframes heartFly {
+  0% {
+    transform: translate(-50%, -50%) scale(.3) rotate(0);
+    opacity: 0;
+  }
+  15% { opacity: 1; }
+  100% {
+    transform: translate(
+      calc(-50% + var(--x)),
+      calc(-50% + var(--y))
+    ) scale(1.3) rotate(var(--rotate));
+    opacity: 0;
+  }
+}
+
+/* OPENING PAGE */
+
+#intro {
+  background:
+    radial-gradient(circle at 85% 15%, #f4e1e6 0, transparent 25%),
+    var(--cream);
+  text-align: center;
+}
+
+.intro-sparkle {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.intro-title {
+  font-size: clamp(38px, 10vw, 65px);
+  line-height: 1.1;
+  margin: 8px 0;
+}
+
+.script {
+  font-family: 'Caveat', cursive;
+  color: #b77e92;
+}
+
+.intro-copy {
+  max-width: 390px;
+  color: var(--grey);
+  font-size: 14px;
+  margin: 12px auto;
+}
+
+.floating-deco {
+  position: absolute;
+  font-size: 22px;
+  opacity: .65;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px) rotate(8deg); }
+}
+
+.next-button {
+  border: 1px solid #e7d3db;
+  background: #fff;
+  color: var(--dark);
+  padding: 13px 22px;
+  border-radius: 30px;
+  margin-top: 18px;
+  box-shadow: 0 6px 18px #9b7d8910;
+  transition: .25s;
+}
+
+.next-button:hover {
+  transform: translateY(-3px);
+  background: #f8edf0;
+}
 
 /* MEMORIES */
+
 #memories {
-  background: linear-gradient(180deg, #fff8ee 0%, #f8e9e9 100%);
+  justify-content: flex-start;
+  background:
+    radial-gradient(circle at 0% 20%, #f5e8e9 0, transparent 25%),
+    var(--cream);
 }
 
-.memory-heading { margin-bottom: 30px; }
+.section-heading {
+  text-align: center;
+  max-width: 600px;
+  margin: 12px auto 28px;
+}
 
-.polaroids {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(10px, 3vw, 23px);
-  flex-wrap: wrap;
-  margin: 10px auto 30px;
+.section-heading .tiny {
+  color: #a27f8b;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px, 7vw, 47px);
+  margin: 10px 0;
+}
+
+.section-heading p {
+  color: var(--grey);
+  font-size: 13px;
+  margin: 0 auto;
+  max-width: 360px;
+}
+
+.photo-grid {
+  width: min(100%, 980px);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px 18px;
+  margin: 0 auto;
 }
 
 .polaroid {
-  width: clamp(125px, 27vw, 190px);
-  background: #fffdfb;
-  padding: 9px 9px 15px;
-  box-shadow: 0 8px 24px #6e53551b;
-  border: 1px solid #f0e4df;
-  position: relative;
-  transition: transform .35s ease, box-shadow .35s ease;
+  padding: 8px 8px 13px;
+  background: white;
+  box-shadow: 0 5px 18px #62515b18;
+  border: 1px solid #f0e8e8;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform .3s, box-shadow .3s;
+  min-width: 0;
 }
 
-.polaroid:nth-child(1) { transform: rotate(-6deg); }
-.polaroid:nth-child(2) { transform: rotate(3deg) translateY(-8px); }
-.polaroid:nth-child(3) { transform: rotate(-3deg); }
-
 .polaroid:hover {
-  transform: rotate(0deg) translateY(-9px) scale(1.04);
-  box-shadow: 0 16px 30px #6e53552b;
+  transform: rotate(0deg) translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 25px #62515b25;
   z-index: 2;
 }
 
 .polaroid img {
-  display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
+  display: block;
   object-fit: cover;
-  background: #f4e8e4;
+  background: #f2e9e9;
 }
 
 .polaroid figcaption {
-  padding-top: 10px;
-  font: 500 22px 'Caveat', cursive;
-  color: #9d7c85;
+  font-family: 'Caveat', cursive;
+  font-size: clamp(13px, 1.7vw, 19px);
+  text-align: center;
+  padding-top: 9px;
+  color: #68606a;
+  overflow-wrap: anywhere;
 }
 
-.tape {
-  position: absolute;
-  top: -9px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-5deg);
-  width: 47px;
-  height: 17px;
-  background: #e8b7c3b8;
-  z-index: 3;
-  box-shadow: 0 2px 3px #795d5d0b;
+.memory-note {
+  margin: 32px auto 0;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  color: #b17c90;
+  font-size: 25px;
 }
 
-.memory-foot {
-  font: 500 24px 'Caveat', cursive;
-  color: #a9818b;
-  margin: 0 0 24px;
+.center-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 22px;
 }
 
-/* LETTER */
-#letter {
+/* LETTER INVITATION */
+
+#letterPage {
   background:
-    radial-gradient(ellipse at top left, #f8e5e8 0%, transparent 48%),
-    radial-gradient(ellipse at bottom right, #e9e2e2 0%, transparent 45%),
+    radial-gradient(circle at 10% 15%, #f3e1e6 0, transparent 26%),
     var(--cream);
+  overflow: hidden;
 }
 
-.envelope-wrap {
-  width: min(100%, 340px);
-  margin: 24px auto 18px;
-  perspective: 1000px;
-  cursor: pointer;
-  outline: none;
+.letter-intro {
+  text-align: center;
+  width: min(100%, 500px);
+}
+
+.letter-intro h2 {
+  font-size: clamp(31px, 8vw, 45px);
+  margin: 10px 0;
+}
+
+.letter-intro p {
+  font-size: 13px;
+  color: var(--grey);
 }
 
 .envelope {
-  height: 215px;
-  width: 100%;
   position: relative;
-  background: #e9bfc8;
-  border-radius: 5px 5px 13px 13px;
-  box-shadow: 0 16px 35px #86636b22;
-  transition: transform .4s ease;
+  width: min(290px, 80vw);
+  height: 190px;
+  margin: 30px auto 15px;
+  background: #ead1d9;
+  border-radius: 5px;
+  box-shadow: 0 14px 35px #775f6d20;
+  cursor: pointer;
+  transition: transform .3s;
 }
 
-.envelope-wrap:hover .envelope {
-  transform: translateY(-4px);
+.envelope:hover {
+  transform: translateY(-5px);
 }
 
-.envelope-back {
-  position: absolute;
-  inset: 0;
-  background: #f0cdd3;
-  border-radius: 5px 5px 13px 13px;
-}
-
-.letter-paper {
-  position: absolute;
-  left: 7%;
-  top: 9%;
-  width: 86%;
-  height: 83%;
-  background: #fffaf0;
-  border: 1px solid #f0e0d2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 8px;
-  transition: transform .8s cubic-bezier(.2,.75,.25,1);
-  box-shadow: 0 2px 8px #8a62620b;
-}
-
-.letter-paper span:first-child {
-  font: 600 28px 'Caveat', cursive;
-  color: var(--pink-dark);
-}
-
-.letter-paper span:last-child {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #a18a8c;
-}
-
-.envelope-front {
-  position: absolute;
-  inset: 0;
-  background: #e7b8c4;
-  clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%);
-  border-radius: 5px 5px 13px 13px;
-}
-
-.envelope-flap {
-  position: absolute;
-  inset: 0;
-  background: #f2cfd6;
-  clip-path: polygon(0 0, 100% 0, 50% 59%);
-  transform-origin: top center;
-  transition: transform .6s ease;
-  z-index: 4;
-  border-radius: 5px 5px 0 0;
-}
-
-.seal {
-  position: absolute;
-  z-index: 5;
-  top: 49%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 39px;
-  height: 39px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: #fffaf4;
-  background: #bc8192;
-  border: 2px solid #f7dfe3;
-  font-size: 18px;
-  transition: opacity .3s ease;
-}
-
-.envelope-wrap.open .envelope-flap {
-  transform: rotateX(180deg);
-  z-index: 0;
-}
-
-.envelope-wrap.open .letter-paper {
-  transform: translateY(-95px);
-}
-
-.envelope-wrap.open .seal { opacity: 0; }
-
-.tap-note {
-  color: #9e858b;
-  font: 500 22px 'Caveat', cursive;
-  margin: 0 0 24px;
-}
-
-.letter-content {
-  display: none;
-  width: min(100%, 620px);
-  margin: 20px auto 0;
-  background: #fffdf8;
-  text-align: left;
-  border: 1px solid #ead9d4;
-  border-radius: 6px;
-  padding: clamp(22px, 5vw, 40px);
-  box-shadow: 0 14px 35px #8e707015;
-  position: relative;
-  animation: floatIn .7s ease both;
-}
-
-.letter-content::before {
+.envelope::before {
   content: "";
   position: absolute;
-  inset: 8px;
-  border: 1px dashed #e9c9ce;
-  pointer-events: none;
+  inset: 0;
+  background: #f5e5e9;
+  clip-path: polygon(0 0, 50% 58%, 100% 0);
+  z-index: 3;
+  transition: transform .7s ease;
+  transform-origin: top;
 }
 
-.letter-content.opened { display: block; }
-
-.letter-content h2 {
-  font: 700 clamp(25px, 6vw, 34px)/1.2 'Caveat', cursive;
-  text-align: center;
-  color: var(--pink-dark);
-  margin: 8px 0 22px;
+.envelope.open::before {
+  transform: rotateX(180deg);
 }
 
-.letter-content p {
-  font-size: 13px;
-  line-height: 2;
-  margin: 0 0 17px;
-  position: relative;
+.envelope::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #dcb9c6;
+  clip-path: polygon(0 100%, 0 0, 50% 57%, 100% 0, 100% 100%);
+  z-index: 2;
 }
 
-.letter-content .closing {
-  font: 600 25px/1.4 'Caveat', cursive;
-  text-align: center;
-  color: var(--pink-dark);
-  margin-top: 25px;
+.envelope-heart {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  transition: opacity .3s;
 }
 
-.signature {
-  font: 600 27px 'Caveat', cursive;
-  color: #a17c86;
-  text-align: right;
-  margin-top: 25px;
-}
-
-.back-btn {
-  margin-top: 28px;
-}
-
-/* FLOATING HEARTS */
-.heart {
-  position: fixed;
-  z-index: 10;
-  bottom: -30px;
-  pointer-events: none;
-  color: #d89eaf;
+.envelope.open .envelope-heart {
   opacity: 0;
-  animation: floatHeart 6s linear forwards;
 }
 
-@keyframes floatIn {
-  from { opacity: 0; transform: translateY(18px) scale(.98); }
+.letter-hint {
+  color: #9c8290;
+  font-size: 12px;
+}
+
+/* RUNAWAY BUTTON */
+
+.runaway-zone {
+  width: min(100%, 500px);
+  min-height: 165px;
+  position: relative;
+  margin: 10px auto 0;
+  border: 1px dashed #e5d5dc;
+  border-radius: 22px;
+  background: #ffffff70;
+  overflow: hidden;
+}
+
+.runaway-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  border: 0;
+  background: var(--dark);
+  color: white;
+  border-radius: 30px;
+  padding: 13px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 5px 16px #54404b22;
+  transition: left .25s ease, top .25s ease, transform .2s;
+  z-index: 5;
+}
+
+.runaway-button:hover {
+  background: #625964;
+}
+
+.runaway-message {
+  min-height: 23px;
+  font-size: 12px;
+  color: #a17b8c;
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+/* LETTER CONTENT */
+
+#letterContent {
+  display: none;
+  width: min(100%, 680px);
+  margin: 35px auto 0;
+  animation: letterAppear 1s ease both;
+}
+
+#letterContent.show {
+  display: block;
+}
+
+@keyframes letterAppear {
+  from { opacity: 0; transform: translateY(35px) scale(.97); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@keyframes pageIn {
-  from { opacity: 0; transform: translateY(13px); }
-  to { opacity: 1; transform: translateY(0); }
+.paper {
+  position: relative;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #fffdf9 0,
+      #fffdf9 31px,
+      #f1e7e6 32px
+    );
+  border: 1px solid #ebdce0;
+  border-radius: 8px;
+  padding: 32px clamp(19px, 5vw, 48px);
+  box-shadow: 0 15px 45px #715d6817;
+  line-height: 1.95;
 }
 
-@keyframes bob {
-  0%, 100% { transform: translateY(0) rotate(-2deg); }
-  50% { transform: translateY(-5px) rotate(2deg); }
+.paper::before {
+  content: "♡";
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  color: #d2a1b1;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: .45; transform: scale(.75); }
+.paper .letter-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #a66f83;
+  margin-top: 0;
 }
 
-@keyframes floatHeart {
-  0% { opacity: 0; transform: translateY(0) rotate(0deg); }
-  12% { opacity: .65; }
-  85% { opacity: .5; }
-  100% { opacity: 0; transform: translateY(-110vh) rotate(35deg); }
+.paper p {
+  font-size: 14px;
+  margin: 17px 0;
 }
 
-@media (max-width: 440px) {
-  .page { padding: 82px 16px 28px; }
-  .polaroids { gap: 12px; }
-  .polaroid { width: min(42vw, 165px); }
-  .polaroid:nth-child(3) { margin-top: 7px; }
-  .letter-content p { font-size: 12.5px; }
-  .envelope { height: 190px; }
+.paper .final-wish {
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: clamp(23px, 5vw, 31px);
+  line-height: 1.5;
+  color: #a66f83;
+  margin-top: 28px;
+}
+
+.signature {
+  text-align: right;
+  font-family: 'Caveat', cursive;
+  font-size: 29px;
+  color: #a66f83;
+  margin-top: 24px;
+}
+
+.bottom-note {
+  text-align: center;
+  color: #9c8992;
+  font-size: 11px;
+  margin: 24px 0 0;
+}
+
+@media (max-width: 700px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 12px;
+  }
+
+  .polaroid {
+    padding: 6px 6px 10px;
+  }
+
+  .polaroid figcaption {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 390px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 15px;
+  }
+
+  .section-heading h2 {
+    font-size: 31px;
+  }
+
+  .paper {
+    padding: 28px 18px;
+  }
+
+  .paper p {
+    font-size: 13px;
+  }
+
+  .runaway-zone {
+    min-height: 175px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
   }
 }
@@ -632,352 +647,462 @@ h1, h2, h3, p { margin-top: 0; }
 
 <body>
 
-<!-- PASSWORD -->
-<section id="gate">
+<audio id="bgMusic" loop preload="auto">
+  <source src="if.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" class="music-control hidden" type="button">
+  ♫ pause music
+</button>
+
+<!-- PASSWORD PAGE -->
+<section id="gate" class="page active">
   <div class="gate-card">
-    <span class="corner one">♡</span>
-    <span class="corner two">✧</span>
-    <span class="corner three">୨୧</span>
-    <span class="corner four">♡</span>
+    <div class="cake">🎂</div>
+    <p class="eyebrow">a little something for you</p>
+    <h1>Happy Birthday!</h1>
+    <p class="subtitle">someone made this just for u ♡</p>
 
-    <div class="bow">🎀</div>
-    <div class="eyebrow">a little surprise for you</div>
-    <h1>Happy Birthday</h1>
-    <p class="subtitle">
-      someone made a little something<br>
-      just for you, keken ♡
-    </p>
-
-    <form id="password-form">
+    <form id="passwordForm">
       <input
+        id="passwordInput"
         class="password-input"
-        id="password"
         type="password"
         inputmode="numeric"
         maxlength="4"
         placeholder="••••"
-        aria-label="Password"
         autocomplete="off"
+        aria-label="Birthday password"
         required
       >
-      <button class="primary-btn" type="submit">
-        open your surprise ♡
+      <button class="main-button" type="submit">
+        unlock your surprise ♡
       </button>
+      <p id="passwordError" class="error" aria-live="polite"></p>
     </form>
 
     <p class="hint">hint: the date and month of your birthday</p>
-    <p id="error" role="status"></p>
+  </div>
+
+  <span class="floating-deco" style="top:13%;left:12%">♡</span>
+  <span class="floating-deco" style="top:25%;right:12%;animation-delay:1s">✧</span>
+  <span class="floating-deco" style="bottom:16%;left:15%;animation-delay:2s">୨୧</span>
+</section>
+
+<!-- HEART EXPLOSION -->
+<div id="burst" class="hidden" aria-hidden="true">
+  <div class="burst-center">🤍</div>
+</div>
+
+<!-- OPENING PAGE -->
+<section id="intro" class="page">
+  <span class="floating-deco" style="top:17%;left:12%">✧</span>
+  <span class="floating-deco" style="top:24%;right:12%;animation-delay:1s">♡</span>
+  <span class="floating-deco" style="bottom:20%;left:17%;animation-delay:2s">୨୧</span>
+  <span class="floating-deco" style="bottom:16%;right:14%;animation-delay:.7s">✿</span>
+
+  <div class="intro-sparkle">✧･ﾟ: *✧･ﾟ:* ♡ *:･ﾟ✧*:･ﾟ✧</div>
+  <p class="script" style="font-size:28px;margin:8px 0">made with love,</p>
+  <h1 class="intro-title">for you,<br><span class="script">keken ♡</span></h1>
+
+  <p class="intro-copy">
+    a little corner of our story. aku bikin sesuatu kecil buat kamu,
+    isinya beberapa memories dan words yang pengen aku kasih ke kamu.
+    so take your time, okay? 🤍
+  </p>
+
+  <button class="next-button" type="button" onclick="showPage('memories')">
+    let's take a look →
+  </button>
+</section>
+
+<!-- MEMORIES PAGE -->
+<section id="memories" class="page">
+  <div class="section-heading">
+    <p class="tiny">little pieces of us ♡</p>
+    <h2>our little memories</h2>
+    <p>
+      some moments may seem ordinary, but they're little things
+      that make me happy. here's to the memories we've made. 🤍
+    </p>
+  </div>
+
+  <div class="photo-grid">
+    <figure class="polaroid" style="--tilt:-3deg">
+      <img src="foto1.jpg" alt="Memory 1" loading="lazy">
+      <figcaption>one of my favorites ♡</figcaption>
+    </figure>
+
+    <figure class="polaroid" style="--tilt:2deg">
+      <img src="foto2.jpg" alt="Memory 2" loading="lazy">
+      <figcaption>this little moment</figcaption>
+    </figure>
+
+    <figure class="polaroid" style="--tilt:-2deg">
+      <img src="foto3.jpg" alt="Memory 3" loading="lazy">
+      <figcaption>you & me 🤍</figcaption>
+    </figure>
+
+    <figure class="polaroid" style="--tilt:3deg">
+      <img src="foto4.jpg" alt="Memory 4" loading="lazy">
+      <figcaption>kept in my heart</figcaption>
+    </figure>
+
+    <figure class="polaroid" style="--tilt:-1deg">
+      <img src="foto5.jpg" alt="Memory 5" loading="lazy">
+      <figcaption>little happiness</figcaption>
+    </figure>
+
+    <figure class="polaroid" style="--tilt:2deg">
+      <img src="foto6.jpg" alt="Memory 6" loading="lazy">
+      <figcaption>glad it was you</figcaption>
+    </figure>
+
+    <figure class="polaroid" style="--tilt:-3deg">
+      <img src="foto7.jpg" alt="Memory 7" loading="lazy">
+      <figcaption>one for the memories</figcaption>
+    </figure>
+
+    <figure class="polaroid" style="--tilt:2deg">
+      <img src="foto8.jpg" alt="Memory 8" loading="lazy">
+      <figcaption>my kind of favorite</figcaption>
+    </figure>
+
+    <figure class="polaroid" style="--tilt:-2deg">
+      <img src="foto9.jpg" alt="Memory 9" loading="lazy">
+      <figcaption>just us, being us</figcaption>
+    </figure>
+
+    <figure class="polaroid" style="--tilt:3deg">
+      <img src="foto10.jpg" alt="Memory 10" loading="lazy">
+      <figcaption>and many more ♡</figcaption>
+    </figure>
+  </div>
+
+  <p class="memory-note">still collecting moments with you ♡</p>
+
+  <div class="center-actions">
+    <button class="next-button" type="button" onclick="showPage('intro')">
+      ← go back
+    </button>
+    <button class="main-button" type="button" onclick="openLetterPage()">
+      there's one more thing 💌
+    </button>
   </div>
 </section>
 
-<!-- MAIN SITE -->
-<main id="site" class="hidden">
-  <audio id="music" loop preload="none">
-    <source src="wte.mp3" type="audio/mpeg">
-  </audio>
+<!-- LETTER PAGE -->
+<section id="letterPage" class="page">
+  <div class="letter-intro" id="letterIntro">
+    <p class="script" style="font-size:27px;margin:0">one last little thing...</p>
+    <h2>a letter for you 💌</h2>
+    <p>but first, there's a tiny challenge you have to pass. hehe.</p>
 
-  <button id="music-button" class="music-control" type="button">
-    <span class="music-dot"></span>
-    <span id="music-label">play our song ♫</span>
-  </button>
-
-  <!-- OPENING: NO HBD AND NO PHOTO -->
-  <section id="intro" class="page active">
-    <span class="sparkle s1">✧</span>
-    <span class="sparkle s2">♡</span>
-    <span class="sparkle s3">୨୧</span>
-    <span class="sparkle s4">✦</span>
-
-    <div class="page-inner">
-      <div class="script">for you, keken ♡</div>
-      <div class="soft-divider">✧ · · ♡ · · ✧</div>
-      <h2 class="display-title">
-        a little corner<br>of our story
-      </h2>
-      <p class="body-copy">
-        aku bikin sesuatu kecil buat kamu,
-        isinya beberapa memories dan words
-        yang pengen aku kasih ke kamu.
-        so take your time, okay? 🤍
-      </p>
-      <span class="decor-heart">♡　✧　♡</span>
-      <div style="margin-top:27px">
-        <button class="next-btn" type="button" data-next="memories">
-          let's take a look <span>→</span>
-        </button>
-      </div>
-      <p class="tiny-note">made with love, just for you</p>
+    <div class="envelope" id="envelope" role="img" aria-label="A pink envelope">
+      <span class="envelope-heart">♡</span>
     </div>
-  </section>
 
-  <!-- MEMORIES: ALL THREE PHOTOS -->
-  <section id="memories" class="page">
-    <div class="page-inner">
-      <div class="section-label">little pieces of us</div>
-      <h2 class="display-title memory-heading">our memories ♡</h2>
-      <p class="body-copy">
-        some little moments that became
-        special just because they were with you.
-      </p>
+    <p class="letter-hint" id="letterHint">
+      tap the envelope, then try to catch the button 🤭
+    </p>
 
-      <div class="polaroids">
-        <figure class="polaroid">
-          <span class="tape"></span>
-          <img src="foto1.jpg" alt="Our memory number one">
-          <figcaption>little moment ♡</figcaption>
-        </figure>
-
-        <figure class="polaroid">
-          <span class="tape"></span>
-          <img src="foto2.jpg" alt="Our memory number two">
-          <figcaption>you & me ୨୧</figcaption>
-        </figure>
-
-        <figure class="polaroid">
-          <span class="tape"></span>
-          <img src="foto3.jpg" alt="Our memory number three">
-          <figcaption>one of my favs</figcaption>
-        </figure>
-      </div>
-
-      <p class="memory-foot">
-        and hopefully, many more to come... ♡
-      </p>
-
-      <button class="next-btn" type="button" data-next="letter">
-        there's a letter for you <span>→</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- LETTER -->
-  <section id="letter" class="page">
-    <div class="page-inner">
-      <div class="section-label">something from my heart</div>
-      <h2 class="display-title">a little letter ♡</h2>
-      <p class="body-copy">
-        i put some words in here, just for you.
-      </p>
-
+    <div class="runaway-zone" id="runawayZone">
       <button
-        class="envelope-wrap"
-        id="envelope"
-        type="button"
-        aria-label="Open your letter"
-        aria-expanded="false"
-      >
-        <div class="envelope">
-          <div class="envelope-back"></div>
-          <div class="letter-paper">
-            <span>for my keken</span>
-            <span>OPEN WITH LOVE ♡</span>
-          </div>
-          <div class="envelope-front"></div>
-          <div class="envelope-flap"></div>
-          <div class="seal">♡</div>
-        </div>
-      </button>
-
-      <p class="tap-note" id="tap-note">tap the envelope to open it ♡</p>
-
-      <article class="letter-content" id="letter-content">
-        <h2>HAPPY BIRTHDAYAY KEKEN SAYAAANGGG 🤍🤍🤍</h2>
-
-        <p>
-          first of all, i hope u know how precious u are,
-          not just today but on your ordinary days too,
-          aku harap di umur kamu yang sekarang akan semakin
-          banyak hal baik yang datang ke kamuu, urusan kamu
-          semuanya bisa dilalui dengan lancar, dan apa yang
-          kamu usahain semoga satu per satu tercapai yaa...
-        </p>
-
-        <p>
-          di umur kamu yang ke 22 ini, aku berharap kamu bisa
-          jadi versi diri kamu yang semakin baik lagi, semakin
-          bahagia, semakin kuat buat ngejalanin apa pun yang
-          ada di depan kamu, dan semoga kamu selalu dikelilingi
-          hal hal baik yaa keken sayangg.
-        </p>
-
-        <p>
-          makasih yaaa uda mau sama akuu, makasih uda hadir di
-          hidup aku dan for becoming someone so special to me.
-          aku seneng bisa kenal kamu sejauh ini, bisa punya cerita
-          sama kamu, bisa ketawa bareng kamu, and honestly, aku
-          berharap kita masih punya banyak banget waktu buat bikin
-          cerita cerita lainnyaa.
-        </p>
-
-        <p>
-          i hope we can spend more birthdays together, more time
-          together, more random conversations, more laughing at
-          the most random things, more little moments.. and i want
-          us to be able to spend as much time together as possible,
-          for as long as we can, keken. 🥹💗
-        </p>
-
-        <p>
-          aku juga berharap kita bisa terus sama sama yaw kenn,
-          belajar ngerti satu sama lain, dan makin kenal satu sama
-          lain lagi.. pasti kita bakal ada aja beda pendapat atau
-          berantem gara gara hal kecil, tapi semoga kita bisa
-          lewatin itu bareng bareng yaa. aku masih mau punya banyak
-          cerita sama kamuu, masih mau ketawa bareng kamu, pokoknya
-          masih mau banyak hal sama kamuuu 🥹💗
-        </p>
-
-        <p>
-          AND ONCE AGAINNN, HAPPY BIRTHDAY MY KEEKENNN SAYANK!!
-          🤍 semoga semua doa baik yang kamu simpen dalam hati
-          bisa satu per satu jadi nyata yaa.
-        </p>
-
-        <p>
-          i love youuu, keken sayangg. semoga di umur kamu yang
-          sekarang ada lebih banyak alasan buat kamu senyum dan
-          ngerasa bangga sama diri kamu sendiri. i'm so happy i
-          get to know you, and i hope i still get to celebrate
-          many more birthdays with youuu.
-        </p>
-
-        <p class="closing">
-          HAPPY BIRTHDAY ONCE AGAINNN,<br>
-          MY KEKEKEKEN!! MWAHHH 🤍
-        </p>
-
-        <div class="signature">love, me ♡</div>
-      </article>
-
-      <button
-        class="next-btn back-btn"
-        id="back-to-memories"
+        class="runaway-button"
+        id="runawayButton"
         type="button"
       >
-        <span>←</span> back to our memories
+        read my message 💌
       </button>
     </div>
-  </section>
-</main>
+
+    <p class="runaway-message" id="runawayMessage" aria-live="polite">
+      hehe, come catch me first ♡
+    </p>
+  </div>
+
+  <!-- The full letter appears after 3 button escapes -->
+  <article id="letterContent">
+    <div class="paper">
+      <p class="letter-title">
+        HAPPY BIRTHDAYAY KEKEN SAYAAANGGG 🤍🤍🤍
+      </p>
+
+      <p>
+        first of all, i hope u know how precious u are, not just today
+        but on your ordinary days too, aku harap di umur kamu yang sekarang
+        akan semakin banyak hal baik yang datang ke kamuu, urusan kamu
+        semuanya bisa dilalui dengan lancar, dan apa yang kamu usahain
+        semoga satu per satu tercapai yaa...
+      </p>
+
+      <p>
+        di umur kamu yang ke 22 ini, aku berharap kamu bisa jadi versi diri
+        kamu yang semakin baik lagi, semakin bahagia, semakin kuat buat
+        ngejalanin apa pun yang ada di depan kamu, dan semoga kamu selalu
+        dikelilingi hal hal baik yaa keken sayangg.
+      </p>
+
+      <p>
+        makasih yaaa uda mau sama akuu, makasih uda hadir di hidup aku dan
+        for becoming someone so special to me. aku seneng bisa kenal kamu
+        sejauh ini, bisa punya cerita sama kamu, bisa ketawa bareng kamu,
+        and honestly, aku berharap kita masih punya banyak banget waktu
+        buat bikin cerita cerita lainnyaa.
+      </p>
+
+      <p>
+        i hope we can spend more birthdays together, more time together,
+        more random conversations, more laughing at the most random things,
+        more little moments.. and i want us to be able to spend as much time
+        together as possible, for as long as we can, keken. 🥹💗
+      </p>
+
+      <p>
+        aku juga berharap kita bisa terus sama sama yaw kenn, belajar ngerti
+        satu sama lain, dan makin kenal satu sama lain lagi.. pasti kita
+        bakal ada aja beda pendapat atau berantem gara gara hal kecil,
+        tapi semoga kita bisa lewatin itu bareng bareng yaa. aku masih mau
+        punya banyak cerita sama kamuu, masih mau ketawa bareng kamu,
+        pokoknya masih mau banyak hal sama kamuuu 🥹💗
+      </p>
+
+      <p>
+        AND ONCE AGAINNN, HAPPY BIRTHDAY MY KEEKENNN SAYANK!! 🤍
+        semoga semua doa baik yang kamu simpen dalam hati bisa satu per satu
+        jadi nyata yaa.
+      </p>
+
+      <p>
+        i love youuu, keken sayangg. semoga di umur kamu yang sekarang ada
+        lebih banyak alasan buat kamu senyum dan ngerasa bangga sama diri
+        kamu sendiri. i'm so happy i get to know you, and i hope i still get
+        to celebrate many more birthdays with youuu.
+      </p>
+
+      <p class="final-wish">
+        HAPPY BIRTHDAY ONCE AGAINNN,<br>
+        MY KEKEKEKEN!! MWAHHH 🤍
+      </p>
+
+      <div class="signature">Love, Gace imups ♡</div>
+    </div>
+
+    <p class="bottom-note">made with love, just for you ♡</p>
+  </article>
+
+  <div class="center-actions" id="letterBackActions">
+    <button class="next-button" type="button" onclick="showPage('memories')">
+      ← back to memories
+    </button>
+  </div>
+</section>
 
 <script>
 const gate = document.getElementById('gate');
-const site = document.getElementById('site');
-const passwordForm = document.getElementById('password-form');
-const passwordInput = document.getElementById('password');
-const errorMessage = document.getElementById('error');
-const music = document.getElementById('music');
-const musicButton = document.getElementById('music-button');
-const musicLabel = document.getElementById('music-label');
-const envelope = document.getElementById('envelope');
-const letterContent = document.getElementById('letter-content');
-const tapNote = document.getElementById('tap-note');
+const burst = document.getElementById('burst');
+const passwordForm = document.getElementById('passwordForm');
+const passwordInput = document.getElementById('passwordInput');
+const passwordError = document.getElementById('passwordError');
+const music = document.getElementById('bgMusic');
+const musicButton = document.getElementById('musicButton');
 
-function showPage(id) {
+let musicPlaying = false;
+
+function showPage(pageId) {
   document.querySelectorAll('.page').forEach(page => {
     page.classList.remove('active');
   });
 
-  const target = document.getElementById(id);
-  if (!target) return;
-
-  target.classList.remove('active');
-  void target.offsetWidth;
-  target.classList.add('active');
-
+  const nextPage = document.getElementById(pageId);
+  nextPage.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-passwordForm.addEventListener('submit', async event => {
+function startMusic() {
+  music.volume = 0.45;
+
+  music.play().then(() => {
+    musicPlaying = true;
+    musicButton.classList.remove('hidden');
+    musicButton.textContent = '♫ pause music';
+  }).catch(() => {
+    musicButton.classList.remove('hidden');
+    musicButton.textContent = '♫ play music';
+    musicPlaying = false;
+  });
+}
+
+musicButton.addEventListener('click', async () => {
+  if (musicPlaying) {
+    music.pause();
+    musicPlaying = false;
+    musicButton.textContent = '♫ play music';
+  } else {
+    try {
+      await music.play();
+      musicPlaying = true;
+      musicButton.textContent = '♫ pause music';
+    } catch (error) {
+      musicButton.textContent = '♫ tap to play';
+    }
+  }
+});
+
+function makeExplosion() {
+  const hearts = ['♡', '♥', '🤍', '💗', '✧', '💕', '୨୧'];
+
+  for (let i = 0; i < 65; i++) {
+    const particle = document.createElement('span');
+    particle.className = 'heart-particle';
+    particle.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 100 + Math.random() * Math.max(window.innerWidth, window.innerHeight) * 0.65;
+
+    particle.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
+    particle.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
+    particle.style.setProperty('--size', `${14 + Math.random() * 22}px`);
+    particle.style.setProperty('--duration', `${1 + Math.random() * 1.1}s`);
+    particle.style.setProperty('--rotate', `${Math.random() * 100 - 50}deg`);
+
+    burst.appendChild(particle);
+  }
+}
+
+passwordForm.addEventListener('submit', event => {
   event.preventDefault();
 
   if (passwordInput.value.trim() !== '2410') {
-    errorMessage.textContent = 'hmm, try again yaa ♡';
+    passwordError.textContent = 'hmm, coba inget-inget lagi yaa 🤭';
     passwordInput.value = '';
     passwordInput.focus();
     return;
   }
 
-  errorMessage.textContent = '';
+  passwordError.textContent = '';
+  gate.classList.remove('active');
   gate.classList.add('hidden');
-  site.classList.remove('hidden');
-  showPage('intro');
 
-  // Attempt playback after the user's password submission.
-  try {
-    await music.play();
-    musicLabel.textContent = 'pause our song ♫';
-    musicButton.classList.add('playing');
-  } catch {
-    musicLabel.textContent = 'play our song ♫';
-    musicButton.classList.remove('playing');
-  }
+  burst.classList.remove('hidden');
+  makeExplosion();
+  startMusic();
+
+  setTimeout(() => {
+    burst.style.transition = 'opacity .65s ease';
+    burst.style.opacity = '0';
+
+    setTimeout(() => {
+      burst.classList.add('hidden');
+      burst.style.opacity = '1';
+      burst.style.transition = '';
+      burst.querySelectorAll('.heart-particle').forEach(el => el.remove());
+      showPage('intro');
+    }, 700);
+  }, 1700);
 });
 
-document.querySelectorAll('[data-next]').forEach(button => {
-  button.addEventListener('click', () => {
-    showPage(button.dataset.next);
-  });
-});
+/* LETTER ENVELOPE + RUNAWAY BUTTON */
 
-musicButton.addEventListener('click', async () => {
-  if (music.paused) {
-    try {
-      await music.play();
-      musicLabel.textContent = 'pause our song ♫';
-      musicButton.classList.add('playing');
-    } catch {
-      musicLabel.textContent = 'song unavailable ♡';
-    }
-  } else {
-    music.pause();
-    musicLabel.textContent = 'play our song ♫';
-    musicButton.classList.remove('playing');
-  }
-});
+const envelope = document.getElementById('envelope');
+const runawayZone = document.getElementById('runawayZone');
+const runawayButton = document.getElementById('runawayButton');
+const runawayMessage = document.getElementById('runawayMessage');
+const letterHint = document.getElementById('letterHint');
+const letterContent = document.getElementById('letterContent');
+const letterIntro = document.getElementById('letterIntro');
+const letterBackActions = document.getElementById('letterBackActions');
+
+let envelopeOpened = false;
+let escapeCount = 0;
+let letterUnlocked = false;
+
+const teaseMessages = [
+  'ehh, meleset! coba lagi WKWK 😭',
+  'HAHAHA dikit lagi keken 🤏🏻',
+  'oke oke, kamu menang. baca yaa 🤍'
+];
 
 envelope.addEventListener('click', () => {
-  const isOpen = envelope.classList.toggle('open');
-  envelope.setAttribute('aria-expanded', String(isOpen));
-
-  if (isOpen) {
-    tapNote.textContent = 'a little something from me to you ♡';
-    setTimeout(() => {
-      letterContent.classList.add('opened');
-      letterContent.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }, 400);
-  } else {
-    letterContent.classList.remove('opened');
-    tapNote.textContent = 'tap the envelope to open it ♡';
-  }
+  envelopeOpened = true;
+  envelope.classList.add('open');
+  letterHint.textContent = 'surprisee 🤍 sekarang tangkep tombolnya!';
 });
 
-document.getElementById('back-to-memories')
-  .addEventListener('click', () => {
-    showPage('memories');
-  });
+function moveRunawayButton() {
+  if (letterUnlocked) return;
 
-// Tiny floating hearts; limited so they don't cover the page.
-function makeHeart() {
-  if (document.hidden || document.getElementById('site').classList.contains('hidden')) {
+  if (!envelopeOpened) {
+    letterHint.textContent = 'amplopnya dibuka dulu dongg 🤭';
+    envelope.animate(
+      [
+        { transform: 'translateX(0)' },
+        { transform: 'translateX(-6px)' },
+        { transform: 'translateX(6px)' },
+        { transform: 'translateX(0)' }
+      ],
+      { duration: 300 }
+    );
     return;
   }
 
-  const heart = document.createElement('span');
-  heart.className = 'heart';
-  heart.textContent = Math.random() > .5 ? '♡' : '♥';
-  heart.style.left = (Math.random() * 94 + 3) + 'vw';
-  heart.style.fontSize = (12 + Math.random() * 12) + 'px';
-  heart.style.animationDuration = (5 + Math.random() * 3) + 's';
-  document.body.appendChild(heart);
+  escapeCount++;
 
-  setTimeout(() => heart.remove(), 8500);
+  if (escapeCount >= 3) {
+    letterUnlocked = true;
+    runawayButton.textContent = 'okay, read it here ♡';
+    runawayButton.style.left = '50%';
+    runawayButton.style.top = '50%';
+    runawayButton.style.transform = 'translate(-50%, -50%)';
+    runawayMessage.textContent = teaseMessages[2];
+    letterHint.textContent = 'you finally caught it! 🥹';
+    return;
+  }
+
+  const maxX = Math.max(0, runawayZone.clientWidth - runawayButton.offsetWidth - 16);
+  const maxY = Math.max(0, runawayZone.clientHeight - runawayButton.offsetHeight - 16);
+
+  const x = 8 + Math.random() * maxX;
+  const y = 8 + Math.random() * maxY;
+
+  runawayButton.style.left = `${x}px`;
+  runawayButton.style.top = `${y}px`;
+  runawayButton.style.transform = 'none';
+  runawayMessage.textContent = teaseMessages[escapeCount - 1];
 }
 
-setInterval(makeHeart, 1700);
+/* The button escapes when approached, but remains usable on touch screens. */
+runawayButton.addEventListener('pointerenter', event => {
+  if (event.pointerType === 'mouse' && !letterUnlocked) {
+    moveRunawayButton();
+  }
+});
+
+runawayButton.addEventListener('click', () => {
+  if (!envelopeOpened) {
+    letterHint.textContent = 'buka amplopnya dulu, sayangg 🤍';
+    return;
+  }
+
+  if (!letterUnlocked) {
+    moveRunawayButton();
+    return;
+  }
+
+  openLetter();
+});
+
+function openLetterPage() {
+  showPage('letterPage');
+}
+
+function openLetter() {
+  letterIntro.style.display = 'none';
+  letterContent.classList.add('show');
+  letterBackActions.style.display = 'flex';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 </script>
+
 </body>
 </html>
