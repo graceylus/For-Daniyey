@@ -1,25 +1,26 @@
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Keken 🤍</title>
+<title>Happy Birthday, Keken ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --pink: #f0d5df;
-  --pink-dark: #d9aebf;
-  --grey: #8f8994;
-  --cream: #faf6f5;
-  --white: #fffdfd;
-  --ink: #625b66;
+  --pink: #f0d8e2;
+  --pink-dark: #d7b2c3;
+  --cream: #fffaf7;
+  --grey: #aaa3ad;
+  --text: #746977;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -27,134 +28,161 @@ html {
 
 body {
   margin: 0;
+  color: var(--text);
   background: var(--cream);
-  color: var(--ink);
   font-family: 'Quicksand', sans-serif;
-  text-align: center;
 }
 
-button, input { font: inherit; }
-button { cursor: pointer; }
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* PASSWORD */
+
+#gate {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  background: linear-gradient(145deg, #f4dfe7, #fffaf7, #eee6ef);
+}
+
+.gate-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 35px 23px;
+  border: 2px solid #fff;
+  border-radius: 28px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 15px 40px #b8a4b322;
+}
+
+.cake {
+  font-size: 48px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #a38d9f;
+}
 
 h1, h2, h3 {
   font-family: 'Fredoka', sans-serif;
   font-weight: 500;
 }
 
-p { line-height: 1.9; }
-.hidden { display: none !important; }
-
-/* PASSWORD PAGE */
-
-#gate {
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background:
-    radial-gradient(circle at 15% 15%, #fff 0 3%, transparent 4%),
-    radial-gradient(circle at 85% 80%, #eadfe8 0 5%, transparent 6%),
-    linear-gradient(145deg, #faf6f5, #f0d5df);
-}
-
-.gate-card {
-  width: 100%;
-  max-width: 410px;
-  padding: 36px 24px;
-  background: rgba(255,255,255,.78);
-  border: 1px solid white;
-  border-radius: 30px;
-  box-shadow: 0 18px 50px #b7a6b31c;
-}
-
-.cake { font-size: 48px; }
-
 .gate-card h1 {
-  font-size: clamp(30px, 8vw, 42px);
+  font-size: clamp(30px, 8vw, 40px);
   line-height: 1.2;
-  margin: 14px 0;
-  color: #827783;
+  color: #89768b;
+  margin: 16px 0;
 }
 
-.gate-card p { font-size: 14px; }
+.gate-card p {
+  font-size: 13px;
+  line-height: 1.8;
+}
 
 .password {
-  display: block;
   width: 100%;
-  max-width: 255px;
-  margin: 22px auto 14px;
-  padding: 14px 10px;
-  text-align: center;
-  letter-spacing: 12px;
-  text-indent: 12px;
+  max-width: 250px;
+  display: block;
+  margin: 20px auto 13px;
+  padding: 14px;
+  border: 1.5px solid #e3c9d5;
+  border-radius: 15px;
+  background: white;
+  color: var(--text);
   font-size: 22px;
-  border: 1.5px solid #e2c6d2;
-  border-radius: 16px;
-  background: #fffdfd;
-  color: var(--ink);
+  letter-spacing: 12px;
+  text-align: center;
+  text-indent: 12px;
   outline: none;
 }
 
-.password:focus { border-color: var(--grey); }
+.password:focus {
+  border-color: #b69bad;
+}
 
 .pill {
-  border: 0;
-  border-radius: 999px;
-  padding: 13px 24px;
-  background: #b8b3ba;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 23px;
+  background: #b7aab9;
   color: white;
   font-weight: 700;
-  transition: transform .2s, background .2s;
+  transition: .2s;
 }
 
 .pill:hover {
+  background: #99889c;
   transform: translateY(-2px);
-  background: #96909b;
 }
 
 #error {
-  color: #b36c83;
-  font-size: 13px;
-  min-height: 20px;
+  min-height: 18px;
+  color: #b56e87;
+  font-size: 12px;
 }
 
-/* MUSIC BUTTON */
+/* MUSIC */
 
 .music-button {
   position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 50;
-  border: 1px solid #ead5df;
+  z-index: 100;
+  top: 14px;
+  right: 14px;
+  border: 1px solid #ead8e1;
   border-radius: 30px;
   padding: 10px 15px;
-  background: rgba(255,253,253,.94);
-  color: #827783;
+  background: rgba(255,250,247,.95);
+  color: #89768b;
   font-size: 12px;
   font-weight: 700;
-  box-shadow: 0 4px 15px #8c77851a;
+  box-shadow: 0 4px 15px #8d78851a;
 }
 
-/* PAGE LAYOUT */
+/* PAGE STRUCTURE */
 
-#surprise { display: none; }
+#surprise {
+  width: 100%;
+}
 
 .page {
+  display: none;
+  min-height: 100vh;
   min-height: 100svh;
-  padding: 75px 20px 45px;
+  width: 100%;
+  padding: 85px 20px 40px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: pageIn .7s ease both;
+  text-align: center;
+  animation: fadeIn .5s ease;
 }
 
-.page.active { display: flex; }
+.page.active {
+  display: flex;
+}
 
-@keyframes pageIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -162,154 +190,77 @@ p { line-height: 1.9; }
   }
 }
 
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #9b8e9c;
-}
-
 .page h1 {
-  font-size: clamp(36px, 9vw, 62px);
-  line-height: 1.1;
-  margin: 17px 0;
-  color: #847987;
+  color: #89768b;
+  font-size: clamp(39px, 10vw, 62px);
+  line-height: 1.08;
+  margin: 18px 0;
 }
 
 .page h2 {
-  font-size: clamp(28px, 7vw, 40px);
+  color: #89768b;
+  font-size: clamp(28px, 7vw, 39px);
   margin: 12px 0;
-  color: #817584;
 }
 
 .page p {
   max-width: 450px;
   font-size: 14px;
-}
-
-.nav-button {
-  border: 0;
-  border-radius: 999px;
-  padding: 13px 23px;
-  margin: 20px 5px 0;
-  background: #b8b3ba;
-  color: white;
-  font-weight: 700;
-  transition: transform .2s;
-}
-
-.nav-button:hover { transform: translateY(-2px); }
-
-.nav-button.secondary {
-  background: #f0dce4;
-  color: #827783;
+  line-height: 1.9;
 }
 
 .page-number {
   margin-top: 30px;
+  color: #b4a5b3;
   font-size: 11px;
   letter-spacing: 3px;
-  color: #b1a3b0;
 }
 
-/* INTRO */
+.nav-button {
+  margin: 16px 4px 0;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 30px;
+  background: #b7aab9;
+  color: white;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+}
+
+.nav-button.secondary {
+  background: #f0dfe7;
+  color: #89768b;
+}
+
+/* PAGE 1: INTRO */
 
 #intro {
-  background: linear-gradient(155deg, #f4dfe6, #faf6f5 72%);
+  background: linear-gradient(155deg, #f4dfe7, #fffaf7 75%);
 }
 
 .intro-photo {
-  width: min(70vw, 260px);
+  width: min(68vw, 245px);
   aspect-ratio: 4 / 5;
-  margin: 20px auto;
-  padding: 9px 9px 16px;
+  padding: 9px 9px 15px;
+  margin: 18px auto;
   background: white;
-  box-shadow: 0 12px 35px #8c77851c;
+  box-shadow: 0 12px 32px #8d78851c;
   transform: rotate(-2deg);
-}
-
-.intro-photo .photo-frame { height: 100%; }
-
-.intro-caption {
-  font-family: 'Caveat', cursive;
-  font-size: 22px;
-  color: #827783;
-  margin-top: 10px;
-}
-
-.intro-text {
-  animation: textIn 1s ease both;
-  animation-delay: .3s;
-}
-
-@keyframes textIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* PHOTO GALLERY */
-
-.section-label {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #a495a3;
-}
-
-.subtitle {
-  font-size: 13px !important;
-  color: #9b929d;
-  margin-bottom: 25px;
-}
-
-#memories { background: #fffaf9; }
-
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px 16px;
-  max-width: 620px;
-  width: 100%;
-  margin: 25px auto;
-}
-
-.polaroid {
-  background: white;
-  padding: 10px 10px 17px;
-  box-shadow: 0 9px 25px #8c77851a;
-  border-radius: 3px;
-  transform: rotate(-2deg);
-}
-
-.polaroid:nth-child(2) { transform: rotate(2.5deg); }
-
-.polaroid:nth-child(3) {
-  grid-column: 1 / -1;
-  width: 72%;
-  justify-self: center;
-  transform: rotate(-1deg);
 }
 
 .photo-frame {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
-  background: linear-gradient(145deg, #f5e5eb, #e6e2e8);
-  position: relative;
   overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.polaroid:nth-child(3) .photo-frame {
-  aspect-ratio: 16 / 10;
-}
-
-.photo-placeholder {
-  padding: 12px;
-  font-size: 12px;
-  color: #8c7e8e;
+  justify-content: center;
+  background: linear-gradient(145deg, #f5e4eb, #eae5ed);
 }
 
 .photo-frame img {
@@ -320,36 +271,99 @@ p { line-height: 1.9; }
   object-fit: cover;
 }
 
-.photo-caption {
-  font-family: 'Caveat', cursive;
-  font-size: 21px;
-  margin-top: 12px;
-  color: #827783;
+.photo-placeholder {
+  padding: 12px;
+  color: #9a8799;
+  font-size: 12px;
 }
 
-/* LETTER */
+.intro-caption {
+  margin-top: 10px;
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  color: #89768b;
+}
 
-#letter { background: #f0e9ee; }
+.intro-text {
+  animation: fadeIn 1s ease .2s both;
+}
+
+/* PAGE 2: MEMORIES */
+
+#memories {
+  background: #fffaf7;
+}
+
+.subtitle {
+  color: #a195a2;
+  font-size: 13px !important;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 15px;
+  width: 100%;
+  max-width: 570px;
+  margin: 20px auto;
+}
+
+.polaroid {
+  padding: 9px 9px 15px;
+  background: white;
+  box-shadow: 0 8px 24px #8d78851a;
+  transform: rotate(-2deg);
+}
+
+.polaroid:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.polaroid:nth-child(3) {
+  grid-column: 1 / -1;
+  width: 75%;
+  justify-self: center;
+  transform: rotate(-1deg);
+}
+
+.polaroid:nth-child(3) .photo-frame {
+  aspect-ratio: 16 / 10;
+}
+
+.photo-caption {
+  margin-top: 11px;
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  color: #89768b;
+}
+
+/* PAGE 3: LETTER */
+
+#letter {
+  background: linear-gradient(155deg, #f0e7ef, #fffaf7);
+}
 
 .envelope-button {
   display: block;
-  margin: 25px auto;
   width: min(100%, 300px);
-  border: 0;
+  margin: 25px auto;
+  padding: 0;
+  border: none;
   background: transparent;
-  color: var(--ink);
+  color: var(--text);
 }
 
 .envelope {
   position: relative;
-  height: 170px;
-  background: #d8c9d5;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 25px #84738420;
+  height: 170px;
   overflow: hidden;
+  border-radius: 8px;
+  background: #d9cbd9;
+  box-shadow: 0 12px 25px #8d78851c;
 }
 
 .envelope:before,
@@ -365,84 +379,80 @@ p { line-height: 1.9; }
 .envelope:before {
   left: 0;
   border-width: 0 0 115px 150px;
-  border-color: transparent transparent #e7dce5 transparent;
+  border-color: transparent transparent #e8dce7 transparent;
 }
 
 .envelope:after {
   right: 0;
   border-width: 0 150px 115px 0;
-  border-color: transparent transparent #e0d2df transparent;
+  border-color: transparent transparent #e1d3e1 transparent;
 }
 
 .seal {
-  position: relative;
   z-index: 1;
+  display: grid;
+  place-items: center;
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #f7e8ee;
+  background: #f9eaf0;
   font-size: 25px;
-  box-shadow: 0 3px 10px #8b74831b;
 }
 
 .envelope-label {
   display: block;
-  margin-top: 17px;
+  margin-top: 15px;
   font-family: 'Fredoka', sans-serif;
   font-size: 17px;
 }
 
 .letter-paper {
   display: none;
-  text-align: left;
-  max-width: 620px;
   width: 100%;
+  max-width: 620px;
   margin: 10px auto 25px;
   padding: clamp(22px, 6vw, 42px);
-  border-radius: 8px;
+  border-radius: 9px;
   background: #fffdfb;
-  box-shadow: 0 12px 40px #85748716;
-  animation: appear .5s ease;
+  box-shadow: 0 12px 35px #8d78851a;
+  text-align: left;
 }
 
-.letter-paper.open { display: block; }
+.letter-paper.open {
+  display: block;
+  animation: fadeIn .5s ease;
+}
 
 .letter-paper h3 {
-  text-align: center;
-  font-size: 25px;
-  color: #9d7f91;
   margin-top: 0;
+  color: #a17f95;
+  font-size: 25px;
+  text-align: center;
 }
 
 .letter-paper p {
+  max-width: none;
+  margin-bottom: 20px;
   font-size: 14px;
-  white-space: normal;
-  margin: 0 0 20px;
+  line-height: 1.9;
 }
 
 .signature {
-  text-align: right;
+  color: #a17f95;
   font-family: 'Caveat', cursive;
   font-size: 27px;
-  color: #a37f94;
+  text-align: right;
 }
 
-@keyframes appear {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ENDING */
+/* PAGE 4: ENDING */
 
 #ending {
-  background: linear-gradient(155deg, #f4dfe6, #faf6f5 72%);
+  background: linear-gradient(155deg, #f4dfe7, #fffaf7 75%);
 }
 
 .ending-heart {
-  font-size: 35px;
-  margin: 15px;
+  margin: 18px;
+  font-size: 38px;
   animation: heartbeat 1.5s infinite;
 }
 
@@ -450,21 +460,21 @@ p { line-height: 1.9; }
   50% { transform: scale(1.12); }
 }
 
-/* HEART ANIMATION */
+/* HEARTS */
 
 #hearts {
   position: fixed;
   inset: 0;
-  z-index: 99;
-  pointer-events: none;
+  z-index: 200;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .flying-heart {
   position: absolute;
   left: 50%;
   top: 50%;
-  font-size: 25px;
+  font-size: 24px;
   animation: burst 1.5s ease-out forwards;
 }
 
@@ -478,27 +488,32 @@ p { line-height: 1.9; }
     transform: translate(
       calc(-50% + var(--x)),
       calc(-50% + var(--y))
-    ) rotate(var(--r)) scale(1.6);
+    ) rotate(var(--r)) scale(1.5);
   }
 }
 
 footer {
-  padding: 25px;
+  margin-top: 20px;
+  color: #a99ca8;
   font-size: 12px;
-  color: #a59aa5;
 }
 
 @media (max-width: 420px) {
-  .gallery { gap: 16px 12px; }
-  .polaroid { padding: 7px 7px 13px; }
-  .photo-caption { font-size: 18px; }
-  .page { padding-left: 17px; padding-right: 17px; }
-}
+  .page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *:before, *:after {
-    animation-duration: .01ms !important;
-    scroll-behavior: auto !important;
+  .gallery {
+    gap: 16px 11px;
+  }
+
+  .polaroid {
+    padding: 7px 7px 12px;
+  }
+
+  .photo-caption {
+    font-size: 18px;
   }
 }
 </style>
@@ -506,7 +521,6 @@ footer {
 
 <body>
 
-<!-- MUSIC FILE -->
 <audio id="bgMusic" loop preload="auto">
   <source src="wte.mp3" type="audio/mpeg">
 </audio>
@@ -547,17 +561,17 @@ footer {
     <p id="error" aria-live="polite"></p>
 
     <p style="font-family:'Caveat';font-size:21px">
-      hint: (tanggal dan bulan ulang tahunmu)
+      hint: (the date and month of your birthday)
     </p>
   </div>
 </div>
 
 <div id="hearts"></div>
 
-<!-- WEBSITE CONTENT -->
+<!-- ALL WEBSITE PAGES -->
 <div id="surprise" class="hidden">
 
-  <!-- PAGE 1: INTRO + PHOTO -->
+  <!-- PAGE 1 -->
   <section class="page" id="intro">
     <div class="eyebrow">a little page, made just for you</div>
 
@@ -565,10 +579,8 @@ footer {
 
     <div class="intro-photo">
       <div class="photo-frame">
-        <div class="photo-placeholder">foto kita ♡</div>
-        <img src="foto1.jpg" alt="Our first photo"
-          onload="this.previousElementSibling.style.display='none'"
-          onerror="this.style.display='none'">
+        <div class="photo-placeholder">our photo ♡</div>
+        <img src="foto1.jpg" alt="Our photo">
       </div>
       <div class="intro-caption">my favorite person ♡</div>
     </div>
@@ -589,39 +601,33 @@ footer {
     <div class="page-number">01 — 04</div>
   </section>
 
-  <!-- PAGE 2: MEMORIES -->
-  <section class="page hidden" id="memories">
-    <div class="section-label">little pieces of us</div>
+  <!-- PAGE 2 -->
+  <section class="page" id="memories">
+    <div class="eyebrow">little pieces of us</div>
     <h2>the day we started dating</h2>
     <p class="subtitle">some little memories that mean a lot to me ♡</p>
 
     <div class="gallery">
       <div class="polaroid">
         <div class="photo-frame">
-          <div class="photo-placeholder">foto pertama kita ♡</div>
-          <img src="foto1.jpg" alt="Our first memory"
-            onload="this.previousElementSibling.style.display='none'"
-            onerror="this.style.display='none'">
+          <div class="photo-placeholder">our first photo ♡</div>
+          <img src="foto1.jpg" alt="Our first photo">
         </div>
         <div class="photo-caption">my favorite person ♡</div>
       </div>
 
       <div class="polaroid">
         <div class="photo-frame">
-          <div class="photo-placeholder">foto kedua kita ♡</div>
-          <img src="foto2.jpg" alt="Another memory of us"
-            onload="this.previousElementSibling.style.display='none'"
-            onerror="this.style.display='none'">
+          <div class="photo-placeholder">another memory ♡</div>
+          <img src="foto2.jpg" alt="Another memory">
         </div>
         <div class="photo-caption">us, always ♡</div>
       </div>
 
       <div class="polaroid">
         <div class="photo-frame">
-          <div class="photo-placeholder">foto ketiga kita ♡</div>
-          <img src="foto3.jpg" alt="One more memory of us"
-            onload="this.previousElementSibling.style.display='none'"
-            onerror="this.style.display='none'">
+          <div class="photo-placeholder">one more memory ♡</div>
+          <img src="foto3.jpg" alt="One more memory">
         </div>
         <div class="photo-caption">a memory i keep close 🤍</div>
       </div>
@@ -642,14 +648,19 @@ footer {
     <div class="page-number">02 — 04</div>
   </section>
 
-  <!-- PAGE 3: LETTER -->
-  <section class="page hidden" id="letter">
-    <div class="section-label">something from me to you</div>
+  <!-- PAGE 3 -->
+  <section class="page" id="letter">
+    <div class="eyebrow">something from me to you</div>
     <h2>a little letter for keken 💌</h2>
     <p class="subtitle">tap the envelope to open it, sayangg</p>
 
-    <button class="envelope-button" id="envelopeButton"
-      aria-expanded="false" aria-controls="letterPaper">
+    <button
+      class="envelope-button"
+      id="envelopeButton"
+      type="button"
+      aria-expanded="false"
+      aria-controls="letterPaper"
+    >
       <span class="envelope">
         <span class="seal">🤍</span>
       </span>
@@ -691,8 +702,8 @@ footer {
     <div class="page-number">03 — 04</div>
   </section>
 
-  <!-- PAGE 4: ENDING -->
-  <section class="page hidden" id="ending">
+  <!-- PAGE 4 -->
+  <section class="page" id="ending">
     <div class="eyebrow">and that's not all, sayangg</div>
     <div class="ending-heart">🤍</div>
 
@@ -717,9 +728,7 @@ footer {
       ← read my letter again
     </button>
 
-    <footer>
-      happy birthday, my keken ♡
-    </footer>
+    <footer>happy birthday, my keken ♡</footer>
 
     <div class="page-number">04 — 04</div>
   </section>
@@ -740,7 +749,7 @@ form.addEventListener('submit', async function(event) {
   event.preventDefault();
 
   if (passwordInput.value !== '2410') {
-    errorText.textContent = 'hmm, coba inget-inget lagi yaa 🤍';
+    errorText.textContent = 'wrong password, try again sayangg ♡';
     passwordInput.value = '';
     passwordInput.focus();
     return;
@@ -748,25 +757,21 @@ form.addEventListener('submit', async function(event) {
 
   errorText.textContent = '';
 
-  // Try to start music after the password button is pressed.
+  makeHearts();
+
+  gate.classList.add('hidden');
+  surprise.classList.remove('hidden');
+  musicButton.classList.remove('hidden');
+  showPage('intro');
+
   try {
     await audio.play();
     musicButton.textContent = '♡ Music: ON';
   } catch (error) {
     musicButton.textContent = '♡ Music: OFF';
   }
-
-  makeHearts();
-
-  setTimeout(function() {
-    gate.style.display = 'none';
-    surprise.classList.remove('hidden');
-    musicButton.classList.remove('hidden');
-    showPage('intro');
-  }, 700);
 });
 
-// Play/pause music.
 musicButton.addEventListener('click', async function() {
   if (audio.paused) {
     try {
@@ -781,37 +786,32 @@ musicButton.addEventListener('click', async function() {
   }
 });
 
-// Separate pages.
 function goToPage(pageId) {
   showPage(pageId);
 }
 
 function showPage(pageId) {
   document.querySelectorAll('#surprise .page').forEach(function(page) {
-    page.classList.add('hidden');
     page.classList.remove('active');
   });
 
   const target = document.getElementById(pageId);
 
   if (target) {
-    target.classList.remove('hidden');
     target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Floating hearts when password is correct.
 function makeHearts() {
   const symbols = ['🤍', '♡', '💗', '🩷', '✧', '💕'];
 
-  for (let i = 0; i < 32; i++) {
+  for (let i = 0; i < 30; i++) {
     const heart = document.createElement('span');
     heart.className = 'flying-heart';
-
-    heart.textContent =
-      symbols[Math.floor(Math.random() * symbols.length)];
+    heart.textContent = symbols[
+      Math.floor(Math.random() * symbols.length)
+    ];
 
     heart.style.setProperty(
       '--x', (Math.random() * 560 - 280) + 'px'
@@ -822,29 +822,23 @@ function makeHearts() {
     heart.style.setProperty(
       '--r', (Math.random() * 160 - 80) + 'deg'
     );
-
-    heart.style.animationDelay =
-      (Math.random() * .25) + 's';
+    heart.style.animationDelay = (Math.random() * .2) + 's';
 
     hearts.appendChild(heart);
 
     setTimeout(function() {
       heart.remove();
-    }, 1900);
+    }, 1800);
   }
 }
 
-// Open and close the letter.
 const envelopeButton = document.getElementById('envelopeButton');
 const letterPaper = document.getElementById('letterPaper');
 
 envelopeButton.addEventListener('click', function() {
   const isOpen = letterPaper.classList.toggle('open');
 
-  envelopeButton.setAttribute(
-    'aria-expanded', String(isOpen)
-  );
-
+  envelopeButton.setAttribute('aria-expanded', String(isOpen));
   envelopeButton.querySelector('.envelope-label').textContent =
     isOpen ? 'close letter ♡' : 'open me ♡';
 
@@ -856,6 +850,26 @@ envelopeButton.addEventListener('click', function() {
       });
     }, 100);
   }
+});
+
+/* Keep photo placeholders visible if a photo file is missing. */
+document.querySelectorAll('.photo-frame img').forEach(function(img) {
+  function checkPhoto() {
+    const placeholder = img.previousElementSibling;
+
+    if (img.complete && img.naturalWidth > 0) {
+      img.style.display = 'block';
+      if (placeholder) placeholder.style.display = 'none';
+    } else if (img.complete) {
+      img.style.display = 'none';
+      if (placeholder) placeholder.style.display = 'block';
+    }
+  }
+
+  img.addEventListener('load', checkPhoto);
+  img.addEventListener('error', checkPhoto);
+
+  if (img.complete) checkPhoto();
 });
 </script>
 
